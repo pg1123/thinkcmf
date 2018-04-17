@@ -1,188 +1,230 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>首页 {$site_info.site_name|default=''}</title>
-    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
-    <meta name="description" content="{$site_info.site_seo_description|default=''}">
-    <include file="public@head"/>
-    <link href="__TMPL__/public/assets/css/slippry/slippry.css" rel="stylesheet">
-    <style>
-        .caption-wraper {
-            position: absolute;
-            left: 50%;
-            bottom: 2em;
-        }
-
-        .caption-wraper .caption {
-            position: relative;
-            left: -50%;
-            background-color: rgba(0, 0, 0, 0.54);
-            padding: 0.4em 1em;
-            color: #fff;
-            -webkit-border-radius: 1.2em;
-            -moz-border-radius: 1.2em;
-            -ms-border-radius: 1.2em;
-            -o-border-radius: 1.2em;
-            border-radius: 1.2em;
-        }
-
-        .tc-gridbox {
-            margin: 0;
-        }
-
-        @media (max-width: 767px) {
-            .caption-wraper {
-                left: 0;
-                bottom: 0.4em;
-            }
-
-            .caption-wraper .caption {
-                left: 0;
-                padding: 0.2em 0.4em;
-                font-size: 0.92em;
-                -webkit-border-radius: 0;
-                -moz-border-radius: 0;
-                -ms-border-radius: 0;
-                -o-border-radius: 0;
-                border-radius: 0;
-            }
-        }
-
-    </style>
-    <hook name="before_head_end"/>
-</head>
-<body class="body-white">
-<include file="public@nav"/>
-
-<ul id="home-slider" class="list-unstyled">
-    <php>
-        $top_slide_id=empty($theme_vars['top_slide'])?1:$theme_vars['top_slide'];
-    </php>
-    <slides id="$top_slide_id">
-        <li>
-            <div class="caption-wraper">
-                <div class="caption">{$vo.title|default=''}</div>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>饭宝赚</title>
+    <link href="__TMPL__/public/assets/css/style.css" type="text/css" rel="stylesheet">
+  </head>
+   <body>
+    <div id="fbz">
+       <!--焦点图滚动开始-->
+       <div class="fan-slider">
+      <div id="fan-home-slider" class="flexslider">
+        <ul class="slides">
+          <li>
+            <div class="slide"> <img src="__TMPL__/public/assets/images/fanbao/img0.jpg" alt="" />
             </div>
-            <a href="{$vo.url|default=''}"><img src="{:cmf_get_image_url($vo.image)}" alt=""></a>
-        </li>
-    </slides>
-    <noslides id="$top_slide_id">
-        <li>
-            <div class="caption-wraper">
-                <div class="caption">此幻灯片只是演示,您没有设置任何幻灯片,请到后台模板设置！</div>
-            </div>
-            <a href=""><img src="__TMPL__/public/assets/images/demo/1.jpg" alt=""></a>
-        </li>
-        <li>
-            <div class="caption-wraper">
-                <div class="caption">此幻灯片只是演示,您没有设置任何幻灯片,请到后台模板设置！</div>
-            </div>
-            <a href=""><img src="__TMPL__/public/assets/images/demo/2.jpg" alt=""></a>
-        </li>
-        <li>
-            <div class="caption-wraper">
-                <div class="caption">此幻灯片只是演示,您没有设置任何幻灯片,请到后台模板设置！</div>
-            </div>
-            <a href=""><img src="__TMPL__/public/assets/images/demo/3.jpg" alt=""></a>
-        </li>
-    </noslides>
-</ul>
-
-<div class="container">
-    <widget name="features">
-        <div>
-            <h1 class="text-center">{$widget.title}</h1>
-            <h3 class="text-center">{$widget.vars.sub_title}</h3>
-        </div>
-        <php>
-            $features_count = count($widget['vars']['features']);
-            $rows = ceil($features_count/3);
-        </php>
-        <for start="1" end="$rows" comparison="elt" step="1" name="row">
-            <php>
-                $first_row = ($row-1)*3;
-                $features = array_slice($widget['vars']['features'],$first_row,3);
-            </php>
-            <div class="row">
-                <foreach name="features" item="vo">
-                    <div class="col-md-4">
-                        <h2 class="font-large nospace"><i class="fa fa-{$vo.icon}"></i> {$vo.title}</h2>
-                        <p>{$vo.content}</p>
-                    </div>
-                </foreach>
-            </div>
-        </for>
-
-    </widget>
-
-    <widget name="last_news">
-        <div>
-            <h1 class="text-center">{$widget.title}</h1>
-        </div>
-
-        <div class="row">
-            <php>
-                $widget["vars"]["last_news_category_id"] = empty($widget["vars"]["last_news_category_id"])?1:$widget["vars"]["last_news_category_id"];
-                $last_news_limit=4;
-            </php>
-            <portal:articles limit="$last_news_limit" order="post.published_time DESC"
-                             categoryIds="$widget.vars.last_news_category_id">
-                <div class="col-md-3">
-                    <div class="tc-gridbox">
-                        <div class="header">
-                            <div class="item-image">
-                                <a href="{:cmf_url('portal/Article/index',array('id'=>$vo.id,'cid'=>$vo.category_id))}">
-                                    <present name="vo.more.thumbnail">
-                                        <empty name="vo.more.thumbnail">
-                                            <img src="__TMPL__/public/assets/images/default-thumbnail.png"
-                                                 class="img-responsive"
-                                                 alt="">
-                                            <else/>
-                                            <img src="{:cmf_get_image_url($vo.more.thumbnail)}"
-                                                 class="img-responsive"
-                                                 alt="">
-                                        </empty>
-                                        <else/>
-                                        <img src="__TMPL__/public/assets/images/default-thumbnail.png"
-                                             class="img-responsive"
-                                             alt="">
-                                    </present>
-                                </a>
-                            </div>
-                            <h3>
-                                <a href="{:cmf_url('portal/Article/index',array('id'=>$vo.id,'cid'=>$vo.category_id))}">{$vo.post_title}</a>
-                            </h3>
-                            <hr>
-                        </div>
-                        <div class="body">
-                            <p>
-                                <a href="{:cmf_url('portal/Article/index',array('id'=>$vo.id,'cid'=>$vo.category_id))}">...</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </portal:articles>
-        </div>
-    </widget>
-    <include file="public@footer"/>
-</div>
-<!-- /container -->
-<include file="public@scripts"/>
-<script src="__TMPL__/public/assets/js/slippry.min.js"></script>
-<script>
+          </li>
+          <li>
+            <div class="slide"> <img src="__TMPL__/public/assets/images/fanbao/img1.jpg" alt="" /></div>
+          </li>
+          <li>
+            <div class="slide"> <img src="__TMPL__/public/assets/images/fanbao/img2.jpg" alt="" /></div>
+          </li>
+          <li>
+            <div class="slide"> <img src="__TMPL__/public/assets/images/fanbao/img3.jpg" alt="" /></div>
+          </li>
+          <li>
+            <div class="slide"> <img src="__TMPL__/public/assets/images/fanbao/img4.jpg" alt="" /></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+       <!--焦点图滚动结束-->
+       <!--主体部分开始-->
+       
+       <div class="notic clearfix">
+          
+          <div id="container" class="banner n_banner clearfix">
+          <i class="fa fa-volume-up" aria-hidden="true"></i>
+        <ol>
+      <li><a href="http://sc.chinaz.com/" target=_blank>每天下午3点任务最多</a></li>
+      <li><a href="http://sc.chinaz.com/" target=_blank>关注公众号：fanbaozhuan</a></li>
+       </ol>
+    <div class=mouse_direction>
+        <div class=mouse_top></div>
+        <div class=mouse_bottom></div>
+    </div>
+   </div>
+          <button><a href="#">常见问题</a></button>
+       </div>
+       <div class="main">
+          <div class="clearfix"><h2>赚钱优先</h2><span>12600人正在试玩中</span></div>
+          <ul>
+             <li><a href="list.html">
+                <img src="__TMPL__/public/assets/images/fanbao/logo1.jpg">
+                <h2>试玩平台1<span>新手</span><span class="sp1">快速提现</span></h2>
+                <p>每单试玩奖励1.6~3.0元</p>
+                <button>去赚钱</button>
+             </a></li>
+             <li><a href="list.html">
+                <img src="__TMPL__/public/assets/images/fanbao/logo2.jpg">
+                <h2>试玩平台2<span>最佳</span><span class="sp1">快速提现</span></h2>
+                <p>每单试玩奖励1.6~3.0元</p>
+                <button>去赚钱</button>
+             </a></li>
+             <li><a href="list.html">
+                <img src="__TMPL__/public/assets/images/fanbao/logo3.jpg">
+                <h2>试玩平台1<span>推荐</span></h2>
+                <p>每单试玩奖励1.6~3.0元</p>
+                <button>去赚钱</button>
+             </a></li>
+             <li><a href="list.html">
+                <img src="__TMPL__/public/assets/images/fanbao/logo4.jpg">
+                <h2>试玩平台1<span>必做</span></h2>
+                <p>每单试玩奖励1.6~3.0元</p>
+                <button>去赚钱</button>
+             </a></li>
+              <li><a href="list.html">
+                <img src="__TMPL__/public/assets/images/fanbao/logo1.jpg">
+                <h2>试玩平台1<span>新手</span><span class="sp1">快速提现</span></h2>
+                <p>每单试玩奖励1.6~3.0元</p>
+                <button>去赚钱</button>
+             </a></li>
+             <li><a href="list.html">
+                <img src="__TMPL__/public/assets/images/fanbao/logo2.jpg">
+                <h2>试玩平台2<span>最佳</span><span class="sp1">快速提现</span></h2>
+                <p>每单试玩奖励1.6~3.0元</p>
+                <button>去赚钱</button>
+             </a></li>
+             <li><a href="list.html">
+                <img src="__TMPL__/public/assets/images/fanbao/logo3.jpg">
+                <h2>试玩平台1<span>推荐</span></h2>
+                <p>每单试玩奖励1.6~3.0元</p>
+                <button>去赚钱</button>
+             </a></li>
+             <li><a href="list.html">
+                <img src="__TMPL__/public/assets/images/fanbao/logo4.jpg">
+                <h2>试玩平台1<span>必做</span></h2>
+                <p>每单试玩奖励1.6~3.0元</p>
+                <button>去赚钱</button>
+             </a></li>
+          </ul>
+          <h3>更多试玩平台正在准备中</h3>
+       </div>
+       <!--主体部分结束-->
+       <!--底部导航开始-->
+       <nav>
+          <ul class="clearfix">
+             <li class="active">
+             <a href="#">
+             <i class="fa fa-gamepad" aria-hidden="true"></i>
+             <p>试玩赚钱</p>
+             </a>
+             </li>
+             <li>
+             <a href="#">
+             <i class="fa fa-star-half-o" aria-hidden="true"></i>
+             <p>推荐</p>
+             </a>
+             </li>
+             <li>
+             <a href="#">
+             <i class="fa fa-book" aria-hidden="true"></i>
+             <p>阅读赚钱</p>
+             </a>
+             </li>
+             <li>
+             <a href="#">
+             <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+             <p>早起赚钱</p>
+             </a>
+             </li>
+          </ul>
+       </nav>
+       <!--底部导航结束-->
+    </div>
+    <script src="__TMPL__/public/assets/js/jquery-1.10.2.min.js"></script>
+    <script src="__TMPL__/public/assets/js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript">
     $(function () {
-        $("#home-slider").slippry({
-            transition: 'fade',
-            useCSS: true,
-            captions: false,
-            speed: 1000,
-            pause: 3000,
-            auto: true,
-            preload: 'visible'
-        });
-        $("#home-slider").show();
+$('#fan-home-slider').flexslider({
+        animation: "slide",
+        slideshowSpeed: 3000,
+        pauseOnHover: true,
+        animationLoop: true,   
+        before: function (slider) {
+            slider.pause();
+            slider.play();
+        },
     });
-</script>
-<hook name="before_body_end"/>
-</body>
+    
+$(".flex-prev ,.flex-next").empty();  
+}); 
+
+
+
+$(function() {
+    var index = 0;
+    var adtimer;
+    var _wrap = $("#container ol"); //
+    var len = $("#container ol li").length;
+    //len=1;
+    if (len > 1) {
+        $("#container").hover(function() {
+            clearInterval(adtimer);
+        },
+        function() {
+            adtimer = setInterval(function() {
+
+                var _field = _wrap.find('li:first'); //此变量不可放置于函数起始处,li:first取值是变化的
+                var _h = _field.height(); //取得每次滚动高度(多行滚动情况下,此变量不可置于开始处,否则会有间隔时长延时)
+                _field.animate({
+                    marginTop: -_h + 'px'
+                },
+                500,
+                function() { //通过取负margin值,隐藏第一行
+                    _field.css('marginTop', 0).appendTo(_wrap); //隐藏后,将该行的margin值置零,并插入到最后,实现无缝滚动
+                })
+
+            },
+            2000);
+        }).trigger("mouseleave");
+        function showImg(index) {
+            var Height = $("#container").height();
+            $("#container ol").stop().animate({
+                marginTop: -_h + 'px'
+            },
+            1000);
+        }
+
+        $("#container").mouseover(function() {
+            $("#container .mouse_direction").css("display", "block");
+        });
+        $("#container").mouseout(function() {
+            $("#container .mouse_direction").css("display", "none");
+        });
+    }
+
+    $("#container").find(".mouse_top").click(function() {
+        var _field = _wrap.find('li:first'); //此变量不可放置于函数起始处,li:first取值是变化的
+        var last = _wrap.find('li:last'); //此变量不可放置于函数起始处,li:last取值是变化的
+        //last.prependTo(_wrap);
+        var _h = last.height();
+        $("#container ol").css('marginTop', -_h + "px");
+        last.prependTo(_wrap);
+        $("#container ol").animate({
+            marginTop: 0
+        },
+        500,
+        function() { //通过取负margin值,隐藏第一行
+            //$("#container ol").css('marginTop',0).prependTo(_wrap);//隐藏后,将该行的margin值置零,并插入到最后,实现无缝滚动
+        })
+    });
+    $("#container").find(".mouse_bottom").click(function() {
+        var _field = _wrap.find('li:first'); //此变量不可放置于函数起始处,li:first取值是变化的
+        var _h = _field.height();
+        _field.animate({
+            marginTop: -_h + 'px'
+        },
+        500,
+        function() { //通过取负margin值,隐藏第一行
+            _field.css('marginTop', 0).appendTo(_wrap); //隐藏后,将该行的margin值置零,并插入到最后,实现无缝滚动
+        })
+    });
+});
+    </script>
+   </body>
 </html>
