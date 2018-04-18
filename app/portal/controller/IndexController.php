@@ -12,13 +12,18 @@ namespace app\portal\controller;
 
 use cmf\controller\HomeBaseController;
 use think\Db;
+use app\portal\model\PortalPostModel;
+use app\portal\service\ApiService;
 
 class IndexController extends HomeBaseController
 {
     public function index()
     {
+
+        $articles =ApiService::articles(['category_ids'=>'1'])['articles'];
+        //print_r($articles);exit;
         //$article = Db::name('portal_post')->where('id',1)->find();
-        $articles = Db::name('portal_post')->select();
+        //$articles = Db::name('portal_post')->select();
         $this->assign('articles',$articles);
         //print_r($article);exit;
         return $this->fetch(':index');
