@@ -53,54 +53,18 @@
        <div class="main">
           <div class="clearfix"><h2>赚钱优先</h2><span>12600人正在试玩中</span></div>
           <ul>
-             <li><a href="{:cmf_url('portal/Article/index',array('id'=>1,'cid'=>1))}">
-                <img src="__TMPL__/public/assets/images/fanbao/logo1.jpg">
-                <h2>试玩平台1<span>新手</span><span class="sp1">快速提现</span></h2>
-                <p>每单试玩奖励1.6~3.0元</p>
+             <foreach name="articles" item="art">
+             <li><a href="{:cmf_url('portal/Article/index',array('id'=>$art.id,'cid'=>1))}">
+               <!--  <img src="__TMPL__/public/assets/images/fanbao/logo1.jpg"> -->
+               <?php 
+               $url = json_decode($art['more'], true)['thumbnail']; 
+               ?>
+                <img src=" {:cmf_get_image_url($url)}"/>
+                <h2>{$art.post_title}<span>{$art.post_source}</span><span class="sp1">{$art.post_excerpt}</span></h2>
+                <p>{$art.post_keywords}</p>
                 <button>去赚钱</button>
              </a></li>
-             <li><a href="{:cmf_url('portal/Article/index',array('id'=>1,'cid'=>1))}">
-                <img src="__TMPL__/public/assets/images/fanbao/logo2.jpg">
-                <h2>试玩平台2<span>最佳</span><span class="sp1">快速提现</span></h2>
-                <p>每单试玩奖励1.6~3.0元</p>
-                <button>去赚钱</button>
-             </a></li>
-             <li><a href="{:cmf_url('portal/Article/index',array('id'=>1,'cid'=>1))}">
-                <img src="__TMPL__/public/assets/images/fanbao/logo3.jpg">
-                <h2>试玩平台1<span>推荐</span></h2>
-                <p>每单试玩奖励1.6~3.0元</p>
-                <button>去赚钱</button>
-             </a></li>
-             <li><a href="{:cmf_url('portal/Article/index',array('id'=>1,'cid'=>1))}">
-                <img src="__TMPL__/public/assets/images/fanbao/logo4.jpg">
-                <h2>试玩平台1<span>必做</span></h2>
-                <p>每单试玩奖励1.6~3.0元</p>
-                <button>去赚钱</button>
-             </a></li>
-              <li><a href="{:cmf_url('portal/Article/index',array('id'=>1,'cid'=>1))}">
-                <img src="__TMPL__/public/assets/images/fanbao/logo1.jpg">
-                <h2>试玩平台1<span>新手</span><span class="sp1">快速提现</span></h2>
-                <p>每单试玩奖励1.6~3.0元</p>
-                <button>去赚钱</button>
-             </a></li>
-             <li><a href="{:cmf_url('portal/Article/index',array('id'=>1,'cid'=>1))}">
-                <img src="__TMPL__/public/assets/images/fanbao/logo2.jpg">
-                <h2>试玩平台2<span>最佳</span><span class="sp1">快速提现</span></h2>
-                <p>每单试玩奖励1.6~3.0元</p>
-                <button>去赚钱</button>
-             </a></li>
-             <li><a href="{:cmf_url('portal/Article/index',array('id'=>1,'cid'=>1))}">
-                <img src="__TMPL__/public/assets/images/fanbao/logo3.jpg">
-                <h2>试玩平台1<span>推荐</span></h2>
-                <p>每单试玩奖励1.6~3.0元</p>
-                <button>去赚钱</button>
-             </a></li>
-             <li><a href="{:cmf_url('portal/Article/index',array('id'=>1,'cid'=>1))}">
-                <img src="__TMPL__/public/assets/images/fanbao/logo4.jpg">
-                <h2>试玩平台1<span>必做</span></h2>
-                <p>每单试玩奖励1.6~3.0元</p>
-                <button>去赚钱</button>
-             </a></li>
+             </foreach>
           </ul>
           <h3>更多试玩平台正在准备中</h3>
        </div>
