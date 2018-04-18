@@ -1,0 +1,285 @@
+@charset "utf-8";
+/* CSS Document */
+@import url("font-awesome.min.css");
+* {
+	padding: 0;
+	margin: 0;
+}
+.clearfix {
+ *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+	display: table;
+	line-height: 0;
+	content: "";
+}
+.clearfix:after {
+	clear: both;
+}
+li {
+	list-style: none;
+}
+a {
+	color: #000;
+	text-decoration: none;
+}
+button, input {
+	font-family: "微软雅黑";
+	outline: none;
+}
+body{}
+#fbz {
+	max-width: 600px;
+	margin: 0 auto;
+	font-family: "微软雅黑";
+	font-size: 12px;
+	padding-bottom: 80px;
+}
+/*图片滚动*/
+.fan-slider {
+	padding: 1px;
+	position: relative;
+	background-color: #ffffff;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 0px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 0;
+	background-color: #fff;
+}
+.fan-slider .slide {
+	position: relative;
+}
+.fan-slider .flex-control-paging {
+	padding-top: 15px;
+	display: inline-block;
+	position: absolute;
+	bottom: 16px;
+	left: 42%
+}
+.fan-slider .flex-control-paging li {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	overflow: hidden;
+	list-style-type: none;
+}
+.fan-slider .flex-control-paging li a {
+	width: 16px;
+	height: 16px;
+	display: block;
+	background-repeat: no-repeat;
+	background-image: url(../images/fanbao/sprite_nav_3.png);
+	text-indent: -9000px;
+	cursor: pointer;
+}
+.fan-slider .flex-control-paging li a.flex-active {
+	background-position: right top;
+}
+.flexslider {
+	margin: 0;
+	padding: 0;
+}
+.flexslider .slides > li {
+	display: none;
+	-webkit-backface-visibility: hidden;
+	list-style-type: none;
+} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {
+	width: 100%;
+	display: block;
+}
+.flex-pauseplay span {
+	text-transform: capitalize;
+}
+nav {
+	position: fixed;
+	bottom: 0;
+	height: 50px;
+	left: 0;
+	width: 100%;
+}
+nav ul {
+	max-width: 600px;
+	margin: 0 auto;
+	background-color: #fff;
+	border-top: 1px solid #e5e5e5;
+	padding-top: 6px;
+	height: 44px;
+}
+nav li {
+	float: left;
+	width: 25%;
+	text-align: center;
+	font-size: 12px;
+}
+nav .active a {
+	color: #e7384a;
+}
+nav li a {
+	color: #999;
+}
+nav li .fa {
+	font-size: 18px;
+}
+nav li p {
+	display: block;
+	padding-top: 2px;
+}
+.notic {
+	margin: 10px 15px;
+}
+.notic i {
+	float: left;
+	color: #e7384a;
+	font-size: 18px;
+	margin-left: 5px;
+	margin-top: 8px;
+	margin-left: 15px;
+}
+.n_banner {
+	overflow: hidden;
+	background-color: #f5f2f2;
+	border-radius: 32px;
+	height: 32px;
+	line-height: 32px;
+	width: 75%;
+	float: left;
+}
+.n_banner ol {
+	height: 32px;
+	overflow: hidden;
+	padding-left: 10px;
+	font-size: 12px;
+	line-height: 32px;
+	float: left;
+	margin-top: 2px;
+}
+.notic button {
+	width: 22%;
+	float: right;
+	background-color: #e7384a;
+	height: 30px;
+	border: none;
+	border-radius: 30px;
+	font-size: 12px;
+}
+.notic button a {
+	color: #fff;
+}
+.main {
+	padding: 10px 15px;
+}
+.main div h2 {
+	display: block;
+	float: left;
+	font-size: 14px;
+	border-left: 3px solid #e7384a;
+	padding-left: 10px;
+	height: 14px;
+	line-height: 14px;
+}
+.main div span {
+	color: #999;
+	float: right;
+}
+.main ul li {
+	padding: 20px 0;
+	border-bottom: 1px solid #e5e5e5;
+	position: relative;
+	height: 50px;
+}
+.main ul li img {
+	float: left;
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+}
+.main ul li h2 {
+	font-size: 14px;
+	font-weight: normal;
+}
+.main ul li a p {
+	color: #999;
+	padding-top: 5px;
+}
+.main ul li button {
+	position: absolute;
+	right: 0;
+	top: 32px;
+	background-color: #f5f2f2;
+	height: 28px;
+	border: none;
+	border-radius: 30px;
+	font-size: 12px;
+	color: #e7384a;
+	width: 70px;
+}
+.main ul li span {
+	color: #fff;
+	font-size: 12px;
+	background-color: #f59c62;
+	line-height: 20px;
+	border-radius: 0 10px 10px 10px;
+	padding: 2px 5px;
+	margin-left: 4px;
+}
+.main ul li .sp1 {
+	background-color: #9593E4;
+}
+.main h3 {
+	font-size: 12px;
+	text-align: center;
+	color: #999;
+	line-height: 36px;
+	border: 1px dashed #ccc;
+	font-weight: normal;
+	margin-top: 10px;
+}
+.fbz{ background-color:#e34555; padding-top:}
+.header{ height:40px; position:fixed; width:100%;color:#fff; font-size:16px; text-align:center; line-height:40px; background-color:#ab3844 }
+.header a{ font-size:24px; position:absolute; left:10px;color:#fff; display:block; width:40px; height:40px; text-align:left; }
+.lmain1{ padding-top:80px; text-align:center; color:#fff;}
+.lmain1 h1{ font-size:24px; font-weight:normal;}
+.lmain1  span{ font-size:16px; font-weight:normal; padding-left:4px;}
+.lmain1 strong{ display:block; width:100px; font-size:12px; height:26px; border-radius:30px; background-color:#9593E4; color:#fff; font-weight:normal; margin:0 auto; line-height:28px; margin-top:10px;}
+.lmain1 ul{ padding:10px 25px; padding-top:20px;}
+.lmain1 ul li{ float:left; width:33.33%; color:#fff; text-align:left; line-height:22px; font-size:14px;}
+.lmain1 i{ float:left; font-size:14px; width:22px; height:22px; display:block; border:1px solid #fff; border-radius:4px; line-height:22px; text-align:center; margin-right:5px;}
+.lmain2{ border-radius:10px; background-color:#fff; margin:15px; text-align:center; padding:20px;}
+.lmain2 h2 ,.lmain4 h2 ,.lmain5 h2{color: #e7384a; font-size:14px; text-align:center; }
+.lmain4 h2{ padding-bottom:15px;}
+.lmain2 img{ width:60px; height:60px; margin:10px auto; display:block;}
+.lmain2 p{ font-size:14px;padding-bottom:10px; display:block;}
+.lmain2 button{ width:120px; height:34px; border-radius:40px;background: -webkit-linear-gradient(top,rgba(202, 27, 45,1), rgba(255, 108, 123,1)); /* Safari 5.1 - 6 */
+  background: -o-linear-gradient(top,rgba(202, 27, 45,1), rgba(255, 108, 123,1)); /* Opera 11.1 - 12*/
+  background: -moz-linear-gradient(top,rgba(202, 27, 45,1), rgba(255, 108, 123,1)); /* Firefox 3.6 - 15*/
+  background: linear-gradient(to top, rgba(202, 27, 45,1), rgba(255, 108, 123,1)); /* 标准的语法 */border:none; color:#fff;}
+.lmain2 h3{ font-weight:normal; color:#999; font-size:12px; padding-top:10px;}
+.lmain3 ,.lmain4 ,.lmain5{ border-radius:10px; background-color:#fff; margin:15px; padding:20px;}
+.lmain3 p ,.lmain4 p{ font-size:12px; line-height:18px; color:#333; padding-bottom:15px;}
+.lmain3 img{ float:left; width:22%; margin-right:4%;}
+.lmain4 a{ display:block;width:30%; margin-right:5%; float:left;}
+.lmain4 img{ width:100%;border:1px solid #e5e5e5;}
+.lmain3 img:last-child ,.lmain4 a:last-child{ margin-right:0;}
+.lmain5 ul li{ float:left; width:33.33%; text-align:center;}
+.lmain5 ul li img{ width:50px; height:50px;}
+.lmain5 h2{ text-align:center; padding-bottom:15px;}
+.lmain5 ul li a p{ color:#333; padding-top:5px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
