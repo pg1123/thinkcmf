@@ -27,7 +27,11 @@
        </div>
        <div class="lmain2">
           <h2>下载安装试玩平台</h2>
-          <img src="__TMPL__/public/assets/images/fanbao/logo1.jpg">
+          <?php 
+           $url = $article['more']['thumbnail']; 
+           ?>
+           <img src=" {:cmf_get_image_url($url)}"/>
+<!--           <img src="__TMPL__/public/assets/images/fanbao/logo1.jpg"> -->
           <p>试玩平台1</p>
           <a href="#"><button>开始赚钱</button></a>
           <h3>任务更新时间集中在15:00~18:00</h3>
