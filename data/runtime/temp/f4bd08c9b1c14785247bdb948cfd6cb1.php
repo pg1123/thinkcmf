@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:31:"themes/fanbao/portal/index.html";i:1524116405;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:31:"themes/fanbao/portal/index.html";i:1524147399;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -61,8 +61,8 @@
                $url = $art['more']['thumbnail']; 
                ?>
                 <img src=" <?php echo cmf_get_image_url($url); ?>"/>
-                <h2><?php echo $art['post_title']; ?><span><?php echo $art['post_source']; ?></span><span class="sp1"><?php echo $art['post_excerpt']; ?></span></h2>
-                <p>每单试玩奖励<?php echo $art['post_keywords']; ?></p>
+                <h2><?php echo $art['post_title']; ?><span><?php echo $art['post_keywords']; ?></span><span class="sp1"></span></h2>
+                <p>每单试玩奖励<?php echo $art['post_excerpt']; ?></p>
                 <button>去赚钱</button>
              </a></li>
              <?php endforeach; endif; else: echo "" ;endif; ?>

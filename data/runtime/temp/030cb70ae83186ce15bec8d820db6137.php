@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:33:"themes/fanbao/portal/article.html";i:1524140984;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:33:"themes/fanbao/portal/article.html";i:1524147492;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -18,7 +18,7 @@
        <!--头部结束-->
        <!--主体部分开始-->
        <div class="lmain1">
-          <h1><?php echo str_replace('到','~',$article['post_keywords'])  ?><span>元起</span></h1>
+          <h1><?php echo str_replace('到','~',$article['post_excerpt'])  ?><span>元起</span></h1>
           <strong>试玩任务奖励</strong>
           <ul class=" clearfix">
              <li><i class="fa fa-weixin" aria-hidden="true"></i><p>支付宝</p></li>
@@ -34,7 +34,7 @@
            <img src=" <?php echo cmf_get_image_url($url); ?>"/>
 <!--           <img src="/themes/fanbao/public/assets/images/fanbao/logo1.jpg"> -->
           <p>试玩平台1</p>
-          <a href="#"><button>开始赚钱</button></a>
+          <button id="start" data-url="<?php echo strip_tags($article['post_source']) ?>">开始赚钱</button>
           <h3>任务更新时间集中在15:00~18:00</h3>
        </div>
        <div class="lmain3 clearfix">
@@ -73,3 +73,10 @@
    
    </body>
 </html>
+<script src="/themes/fanbao/public/assets/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $('#start').on('click', function(event) {
+        event.preventDefault();
+        window.location.href = $(this).data('url');
+    });
+</script>

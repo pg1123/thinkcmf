@@ -17,7 +17,7 @@
        <!--头部结束-->
        <!--主体部分开始-->
        <div class="lmain1">
-          <h1><?php echo str_replace('到','~',$article['post_keywords'])  ?><span>元起</span></h1>
+          <h1><?php echo str_replace('到','~',$article['post_excerpt'])  ?><span>元起</span></h1>
           <strong>试玩任务奖励</strong>
           <ul class=" clearfix">
              <li><i class="fa fa-weixin" aria-hidden="true"></i><p>支付宝</p></li>
@@ -33,7 +33,7 @@
            <img src=" {:cmf_get_image_url($url)}"/>
 <!--           <img src="__TMPL__/public/assets/images/fanbao/logo1.jpg"> -->
           <p>试玩平台1</p>
-          <a href="#"><button>开始赚钱</button></a>
+          <button id="start" data-url="<?php echo strip_tags($article['post_source']) ?>">开始赚钱</button>
           <h3>任务更新时间集中在15:00~18:00</h3>
        </div>
        <div class="lmain3 clearfix">
@@ -72,3 +72,10 @@
    
    </body>
 </html>
+<script src="__TMPL__/public/assets/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $('#start').on('click', function(event) {
+        event.preventDefault();
+        window.location.href = $(this).data('url');
+    });
+</script>
