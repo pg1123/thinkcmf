@@ -46,9 +46,9 @@
        <div class="lmain4 clearfix">
        <h2>平台介绍</h2>
        <p>为你提供超多好玩的应用，试玩应用还能领取丰厚的现金红包，赶快加入吧~</p>
-       <a href="#"><img src="__TMPL__/public/assets/images/fanbao/5.jpg"></a>
-       <a href="#"><img src="__TMPL__/public/assets/images/fanbao/6.jpg"></a>
-       <a href="#"><img src="__TMPL__/public/assets/images/fanbao/7.jpg"></a>
+       <foreach name="photos" item="vo">
+            <a href="#"><img src="{:cmf_get_image_url($vo.url)}"></a>
+        </foreach>
        </div>
        <div class="lmain5 clearfix">
        <h2>下载此平台的人也下载了</h2>

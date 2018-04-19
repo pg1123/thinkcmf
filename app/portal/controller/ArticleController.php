@@ -68,7 +68,6 @@ class ArticleController extends HomeBaseController
         $this->assign('prev_article', $prevArticle);
         $this->assign('next_article', $nextArticle);
         $this->assign('photos', $article['more']['photos']);
-
         $tplName = empty($article['more']['template']) ? $tplName : $article['more']['template'];
 
         return $this->fetch("/$tplName");
