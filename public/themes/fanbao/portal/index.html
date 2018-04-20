@@ -64,9 +64,15 @@
                 {$art.post_title}
                 <?php
                     $keywords = explode(',',$art['post_keywords']);
+                    print_r($keywords);
                 ?>
-                <span>{$art.post_keywords}</span>
-                <span class="sp1"></span>
+                <foreach name="keywords" item="keword" >
+                    <if condition="$key == 0 ">
+                        <span>{$keword}</span>
+                    <else />
+                        <span class="sp1">{$keword}</span>
+                    </if>
+                </foreach>
                 </h2>
                 <p>每单试玩奖励{$art.post_excerpt}</p>
                 <button>去赚钱</button>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:31:"themes/fanbao/portal/index.html";i:1524186034;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:31:"themes/fanbao/portal/index.html";i:1524200208;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -63,9 +63,12 @@
                 <img src=" <?php echo cmf_get_image_url($url); ?>"/>
                 <h2>
                 <?php echo $art['post_title'];                     $keywords = explode(',',$art['post_keywords']);
-                ?>
-                <span><?php echo $art['post_keywords']; ?></span>
-                <span class="sp1"></span>
+                    print_r($keywords);
+                if(is_array($keywords) || $keywords instanceof \think\Collection || $keywords instanceof \think\Paginator): if( count($keywords)==0 ) : echo "" ;else: foreach($keywords as $key=>$keword): if($key == 0): ?>
+                        <span><?php echo $keword; ?></span>
+                    <?php else: ?>
+                        <span class="sp1"><?php echo $keword; ?></span>
+                    <?php endif; endforeach; endif; else: echo "" ;endif; ?>
                 </h2>
                 <p>每单试玩奖励<?php echo $art['post_excerpt']; ?></p>
                 <button>去赚钱</button>
