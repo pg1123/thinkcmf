@@ -60,7 +60,14 @@
                $url = $art['more']['thumbnail']; 
                ?>
                 <img src=" {:cmf_get_image_url($url)}"/>
-                <h2>{$art.post_title}<span>{$art.post_keywords}</span><span class="sp1"></span></h2>
+                <h2>
+                {$art.post_title}
+                <?php
+                    $keywords = explode(',',$art['post_keywords']);
+                ?>
+                <span>{$art.post_keywords}</span>
+                <span class="sp1"></span>
+                </h2>
                 <p>每单试玩奖励{$art.post_excerpt}</p>
                 <button>去赚钱</button>
              </a></li>
