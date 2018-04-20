@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:31:"themes/fanbao/portal/index.html";i:1524200208;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:31:"themes/fanbao/portal/index.html";i:1524203348;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -63,7 +63,6 @@
                 <img src=" <?php echo cmf_get_image_url($url); ?>"/>
                 <h2>
                 <?php echo $art['post_title'];                     $keywords = explode(',',$art['post_keywords']);
-                    print_r($keywords);
                 if(is_array($keywords) || $keywords instanceof \think\Collection || $keywords instanceof \think\Paginator): if( count($keywords)==0 ) : echo "" ;else: foreach($keywords as $key=>$keword): if($key == 0): ?>
                         <span><?php echo $keword; ?></span>
                     <?php else: ?>

@@ -79,7 +79,7 @@ function _sp_helloworld3(){
 <script src="/static/js/wind.js"></script>
 	
     <?php 
-    \think\Hook::listen('before_head_end',$temp5ad7e298ebf5a,null,false);
+    \think\Hook::listen('before_head_end',$temp5ad9c1e4e354c,null,false);
  ?>
 </head>
 <body class="body-white">
@@ -100,8 +100,8 @@ function _sp_helloworld3(){
             <ul id="main-menu" class="nav navbar-nav">
                 <?php
 
-function __parse_navigationc457c365267cee0a98e2f14a27bcd597($menus,$level=1){
-$_parse_navigation_func_name = '__parse_navigationc457c365267cee0a98e2f14a27bcd597';
+function __parse_navigationcc1ed57d230ed1a9f6207154976bb59f($menus,$level=1){
+$_parse_navigation_func_name = '__parse_navigationcc1ed57d230ed1a9f6207154976bb59f';
 if(is_array($menus) || $menus instanceof \think\Collection || $menus instanceof \think\Paginator): if( count($menus)==0 ) : echo "" ;else: foreach($menus as $key=>$menu): if(empty($menu['children'])): if($level > 1): ?>
                             <li class="menu-item menu-item-level-<?php echo $level; ?> levelgt1">
                                 <a href="<?php echo (isset($menu['href']) && ($menu['href'] !== '')?$menu['href']:''); ?>" target="<?php echo (isset($menu['target']) && ($menu['target'] !== '')?$menu['target']:''); ?>">
@@ -133,9 +133,9 @@ if(is_array($menus) || $menus instanceof \think\Collection || $menus instanceof 
     $navMenuModel = new \app\admin\model\NavMenuModel();
     $menus = $navMenuModel->navMenusTreeArray('',0);
 if(''==''): ?>
-    <?php echo __parse_navigationc457c365267cee0a98e2f14a27bcd597($menus); else: ?>
+    <?php echo __parse_navigationcc1ed57d230ed1a9f6207154976bb59f($menus); else: ?>
     < id="main-navigation" class="nav navbar-nav navbar-nav-custom">
-        <?php echo __parse_navigationc457c365267cee0a98e2f14a27bcd597($menus); ?>
+        <?php echo __parse_navigationcc1ed57d230ed1a9f6207154976bb59f($menus); ?>
     </>
 <?php endif; ?>
 
@@ -355,7 +355,7 @@ $__PAGE_VAR_NAME__ = isset($articles_data['page'])?$articles_data['page']:'';
 <hr>
 <div id="footer">
     <?php 
-    \think\Hook::listen('footer_start',$temp5ad7e298ebfc9,null,false);
+    \think\Hook::listen('footer_start',$temp5ad9c1e4e35b3,null,false);
  ?>
     <div class="links">
         <?php
@@ -468,7 +468,7 @@ if(is_array($__LINKS__) || $__LINKS__ instanceof \think\Collection || $__LINKS__
 
 
 <?php 
-    \think\Hook::listen('before_body_end',$temp5ad7e298ec00e,null,false);
+    \think\Hook::listen('before_body_end',$temp5ad9c1e4e35f6,null,false);
  ?>
 </body>
 </html>
