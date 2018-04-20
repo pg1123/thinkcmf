@@ -64,7 +64,6 @@
                 {$art.post_title}
                 <?php
                     $keywords = explode(',',$art['post_keywords']);
-                    print_r($keywords);
                 ?>
                 <foreach name="keywords" item="keword" >
                     <if condition="$key == 0 ">
