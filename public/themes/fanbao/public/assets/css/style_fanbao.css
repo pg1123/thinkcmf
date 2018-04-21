@@ -2,240 +2,240 @@
 /* CSS Document */
 @import url("font-awesome.min.css");
 * {
-	padding: 0;
-	margin: 0;
+    padding: 0;
+    margin: 0;
 }
 .clearfix {
  *zoom: 1;
 }
 .clearfix:before, .clearfix:after {
-	display: table;
-	line-height: 0;
-	content: "";
+    display: table;
+    line-height: 0;
+    content: "";
 }
 .clearfix:after {
-	clear: both;
+    clear: both;
 }
 li {
-	list-style: none;
+    list-style: none;
 }
 a {
-	color: #000;
-	text-decoration: none;
+    color: #000;
+    text-decoration: none;
 }
 button, input {
-	font-family: "微软雅黑";
-	outline: none;
+    font-family: "微软雅黑";
+    outline: none;
 }
 body{}
 #fbz {
-	max-width: 600px;
-	margin: 0 auto;
-	font-family: "微软雅黑";
-	font-size: 12px;
-	padding-bottom: 80px;
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: "微软雅黑";
+    font-size: 12px;
+    padding-bottom: 80px;
 }
 /*图片滚动*/
 .fan-slider {
-	padding: 1px;
-	position: relative;
-	background-color: #ffffff;
-	border-radius: 3px;
-	text-align: center;
-	line-height: 0px;
-	margin-right: auto;
-	margin-left: auto;
-	padding: 0;
-	background-color: #fff;
+    padding: 1px;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+    background-color: #fff;
 }
 .fan-slider .slide {
-	position: relative;
+    position: relative;
 }
 .fan-slider .flex-control-paging {
-	padding-top: 15px;
-	display: inline-block;
-	position: absolute;
-	bottom: 16px;
-	left: 42%
+    padding-top: 15px;
+    display: inline-block;
+    position: absolute;
+    bottom: 16px;
+    left: 42%
 }
 .fan-slider .flex-control-paging li {
-	margin: 0px;
-	padding: 0px;
-	float: left;
-	overflow: hidden;
-	list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    overflow: hidden;
+    list-style-type: none;
 }
 .fan-slider .flex-control-paging li a {
-	width: 16px;
-	height: 16px;
-	display: block;
-	background-repeat: no-repeat;
-	background-image: url(../images/fanbao/sprite_nav_3.png);
-	text-indent: -9000px;
-	cursor: pointer;
+    width: 16px;
+    height: 16px;
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url(../images/fanbao/sprite_nav_3.png);
+    text-indent: -9000px;
+    cursor: pointer;
 }
 .fan-slider .flex-control-paging li a.flex-active {
-	background-position: right top;
+    background-position: right top;
 }
 .flexslider {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 .flexslider .slides > li {
-	display: none;
-	-webkit-backface-visibility: hidden;
-	list-style-type: none;
+    display: none;
+    -webkit-backface-visibility: hidden;
+    list-style-type: none;
 } /* Hide the slides before the JS is loaded. Avoids image jumping */
 .flexslider .slides img {
-	width: 100%;
-	display: block;
+    width: 100%;
+    display: block;
 }
 .flex-pauseplay span {
-	text-transform: capitalize;
+    text-transform: capitalize;
 }
 nav {
-	position: fixed;
-	bottom: 0;
-	height: 50px;
-	left: 0;
-	width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    left: 0;
+    width: 100%;
 }
 nav ul {
-	max-width: 600px;
-	margin: 0 auto;
-	background-color: #fff;
-	border-top: 1px solid #e5e5e5;
-	padding-top: 6px;
-	height: 44px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 6px;
+    height: 44px;
 }
 nav li {
-	float: left;
-	width: 25%;
-	text-align: center;
-	font-size: 12px;
+    float: left;
+    width: 25%;
+    text-align: center;
+    font-size: 12px;
 }
 nav .active a {
-	color: #e7384a;
+    color: #e7384a;
 }
 nav li a {
-	color: #999;
+    color: #999;
 }
 nav li .fa {
-	font-size: 18px;
+    font-size: 18px;
 }
 nav li p {
-	display: block;
-	padding-top: 2px;
+    display: block;
+    padding-top: 2px;
 }
 .notic {
-	margin: 10px 15px;
+    margin: 10px 15px;
 }
 .notic i {
-	float: left;
-	color: #e7384a;
-	font-size: 18px;
-	margin-left: 5px;
-	margin-top: 8px;
-	margin-left: 15px;
+    float: left;
+    color: #e7384a;
+    font-size: 18px;
+    margin-left: 5px;
+    margin-top: 8px;
+    margin-left: 15px;
 }
 .n_banner {
-	overflow: hidden;
-	background-color: #f5f2f2;
-	border-radius: 32px;
-	height: 32px;
-	line-height: 32px;
-	width: 75%;
-	float: left;
+    overflow: hidden;
+    background-color: #f5f2f2;
+    border-radius: 32px;
+    height: 32px;
+    line-height: 32px;
+    width: 75%;
+    float: left;
 }
 .n_banner ol {
-	height: 32px;
-	overflow: hidden;
-	padding-left: 10px;
-	font-size: 12px;
-	line-height: 32px;
-	float: left;
-	margin-top: 2px;
+    height: 32px;
+    overflow: hidden;
+    padding-left: 10px;
+    font-size: 12px;
+    line-height: 32px;
+    float: left;
+    margin-top: 2px;
 }
 .notic button {
-	width: 22%;
-	float: right;
-	background-color: #e7384a;
-	height: 30px;
-	border: none;
-	border-radius: 30px;
-	font-size: 12px;
+    width: 22%;
+    float: right;
+    background-color: #e7384a;
+    height: 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 12px;
 }
 .notic button a {
-	color: #fff;
+    color: #fff;
 }
 .main {
-	padding: 10px 15px;
+    padding: 10px 15px;
 }
 .main div h2 {
-	display: block;
-	float: left;
-	font-size: 14px;
-	border-left: 3px solid #e7384a;
-	padding-left: 10px;
-	height: 14px;
-	line-height: 14px;
+    display: block;
+    float: left;
+    font-size: 14px;
+    border-left: 3px solid #e7384a;
+    padding-left: 10px;
+    height: 14px;
+    line-height: 14px;
 }
 .main div span {
-	color: #999;
-	float: right;
+    color: #999;
+    float: right;
 }
 .main ul li {
-	padding: 20px 0;
-	border-bottom: 1px solid #e5e5e5;
-	position: relative;
-	height: 50px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+    height: 50px;
 }
 .main ul li img {
-	float: left;
-	width: 50px;
-	height: 50px;
-	margin-right: 10px;
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
 }
 .main ul li h2 {
-	font-size: 14px;
-	font-weight: normal;
+    font-size: 14px;
+    font-weight: normal;
 }
 .main ul li a p {
-	color: #999;
-	padding-top: 5px;
+    color: #999;
+    padding-top: 5px;
 }
 .main ul li button {
-	position: absolute;
-	right: 0;
-	top: 32px;
-	background-color: #f5f2f2;
-	height: 28px;
-	border: none;
-	border-radius: 30px;
-	font-size: 12px;
-	color: #e7384a;
-	width: 70px;
+    position: absolute;
+    right: 0;
+    top: 32px;
+    background-color: #f5f2f2;
+    height: 28px;
+    border: none;
+    border-radius: 30px;
+    font-size: 12px;
+    color: #e7384a;
+    width: 70px;
 }
 .main ul li span {
-	color: #fff;
-	font-size: 12px;
-	background-color: #f59c62;
-	line-height: 20px;
-	border-radius: 0 10px 10px 10px;
-	padding: 2px 5px;
-	margin-left: 4px;
+    color: #fff;
+    font-size: 12px;
+    background-color: #f59c62;
+    line-height: 20px;
+    border-radius: 0 10px 10px 10px;
+    padding: 2px 5px;
+    margin-left: 4px;
 }
 .main ul li .sp1 {
-	background-color: #9593E4;
+    background-color: #9593E4;
 }
 .main h3 {
-	font-size: 12px;
-	text-align: center;
-	color: #999;
-	line-height: 36px;
-	border: 1px dashed #ccc;
-	font-weight: normal;
-	margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+    color: #999;
+    line-height: 36px;
+    border: 1px dashed #ccc;
+    font-weight: normal;
+    margin-top: 10px;
 }
 .fbz{ background-color:#e34555; padding-top:}
 .header{ height:40px; position:fixed; width:100%;color:#fff; font-size:16px; text-align:center; line-height:40px; background-color:#ab3844; max-width: 600px; }
@@ -269,13 +269,13 @@ nav li p {
 .lmain5 ul li a p{ color:#333; padding-top:5px;}
 
 .fangda {
-width: 100%;  
-    height: 100%;  
-    position: fixed;  
-    background:rgba(0,0,0,0.8);  
-    z-index:1000;  
-    top: 0;  
-    left: 0  
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background:rgba(0,0,0,0.8);
+    z-index:1000;
+    top: 0;
+    left: 0
 }
 
 
