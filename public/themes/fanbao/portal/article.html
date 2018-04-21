@@ -47,7 +47,7 @@
        <h2>平台介绍</h2>
        <p>为你提供超多好玩的应用，试玩应用还能领取丰厚的现金红包，赶快加入吧~</p>
        <foreach name="photos" item="vo">
-            <a href="#"><img src="{:cmf_get_image_url($vo.url)}"></a>
+            <a href="#"><img class="pho" src="{:cmf_get_image_url($vo.url)}"></a>
         </foreach>
        </div>
        <div class="lmain5 clearfix">
@@ -77,5 +77,10 @@
     $('#start').on('click', function(event) {
         event.preventDefault();
         window.location.href = $(this).data('url');
+    });
+
+    $('.pho').on('click', function(event) {
+      event.preventDefault();
+      $(this).toggleClass('fangda');
     });
 </script>
