@@ -24,18 +24,6 @@
                 <img src=" {:cmf_get_image_url($url)}"/>
                 <h2>
                 {$art.post_title}
-                <?php
-                    $keywords = explode(',',$art['post_keywords']);
-                ?>
-                <foreach name="keywords" item="keyword" >
-                    <if condition="!empty($keyword)">
-                      <if condition="$key == 0">
-                          <span>{$keyword}</span>
-                      <else />
-                          <span class="sp1">{$keyword}</span>
-                      </if>
-                    </if>
-                </foreach>
                 </h2>
                 <p>每单试玩奖励{$art.post_excerpt}</p>
                 <button>立即下载</button>
