@@ -13,7 +13,7 @@
        <!--主体部分开始-->
        
 
-       <div class="main">
+       <div class="main main_yd">
           <ul>
              <foreach name="articles" item="art">
              <li><a href="{:cmf_url('portal/Article/index',array('id'=>$art.id,'cid'=>$art.category_id))}">
@@ -38,7 +38,7 @@
                 </foreach>
                 </h2>
                 <p>每单试玩奖励{$art.post_excerpt}</p>
-                <button>去赚钱</button>
+                <button>立即下载</button>
              </a></li>
              </foreach>
           </ul>

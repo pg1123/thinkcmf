@@ -125,7 +125,6 @@ nav li .fa {
 }
 nav li p {
     display: block;
-    padding-top: 2px;
 }
 .notic {
     margin: 10px 15px;
@@ -279,6 +278,32 @@ nav li p {
     z-index:1000;
     top: 0;
     left: 0 
+}
+
+.main_yd{
+    background-color: #f5f5f5;
+    padding: 10px 0;
+}
+
+
+.main_yd ul li{
+    border: none;
+    margin-bottom: 5px;
+    background-color: #fff;
+    padding: 25px 15px;
+}
+
+.main_yd ul li button {
+    background: #fff; 
+    border:1px solid #e7384a;
+    width: 80px;
+    font-weight: normal;
+    right: 15px;
+    top: 35px;
+}
+
+.main_yd ul li h2 {
+    padding-top:2px;
 }
 
 
