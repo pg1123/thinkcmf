@@ -323,7 +323,7 @@ nav li p {
 
 /*ydinfo*/
 
-.header{top: 0;}
+.header{top: 0; z-index: 2;}
 .yd1{ border-radius: 10px;
     background-color: #fff;
     margin: 15px;
