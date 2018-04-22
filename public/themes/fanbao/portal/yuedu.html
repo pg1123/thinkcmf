@@ -16,7 +16,7 @@
        <div class="main main_yd">
           <ul>
              <foreach name="articles" item="art">
-             <li><a href="{:cmf_url('portal/Article/index',array('id'=>$art.id,'cid'=>$art.category_id))}">
+             <li><a href="{:cmf_url('portal/Yuedu/info',array('id'=>$art.id,'cid'=>$art.category_id))}">
                <!--  <img src="__TMPL__/public/assets/images/fanbao/logo1.jpg"> -->
                <?php 
                $url = $art['more']['thumbnail']; 

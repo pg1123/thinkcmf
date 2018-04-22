@@ -321,6 +321,61 @@ nav li p {
 }
 
 
+/*ydinfo*/
+
+.header{top: 0;}
+.yd1{ border-radius: 10px;
+    background-color: #fff;
+    margin: 15px;
+    text-align: center;
+    padding: 20px; margin-top:60px; text-align:left; position:relative;}
+
+.yd1 img {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+.yd1 h2 {
+    font-size: 14px;
+    font-weight: normal;
+}
+.yd1 p {
+    color: #999;
+    padding-top: 5px;
+}
+.yd1 button {
+    position: absolute;
+    right: 0;
+    top: 25px;
+    width: 90px;
+    height: 34px;
+    border-radius: 40px;
+    background:#9593E4;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    right:15px;0
+}
+.yd2{ color:#fff; margin:0 20px;margin-top:30px;}
+.yd2 h2{ font-size:15px; color:#fff; line-height:15px; border-left:3px solid #fff; padding-left:8px; font-weight:normal; margin-bottom:10px;}
+.yd2_b { font-size:13px; line-height:20px; position:relative;  overflow-x:scroll;}
+.yd2 p{ padding-bottom:10px; line-height:20px;}
+.yd2_b div{ width:150%; overflow-x:scroll;}
+.yd2 span{float:left;width:100px;margin-right:10px; display:block; height:180px; overflow:hidden;}
+.yd2 img{ width:100%;}
+.yd3 .yd2_b{ position:inherit; overflow-x:auto;}
+.yd3 h3{ font-weight:normal; font-size:13px; color:#79101b; padding:20px 0;}
+.yd3 h4{ font-weight:normal; background-color:#b93643; border-radius:10px ; padding:20px 15px;}
+.yd3 a{    width: 90%;
+    height: 50px;
+    border-radius: 50px;
+    background:#9593E4;
+    border: none;
+    color: #fff;
+    font-size: 18px; display:block; text-align:center; margin:0 auto; line-height:50px; margin-top:40px;}
+
+
 
 
 
