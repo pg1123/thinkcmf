@@ -64,6 +64,7 @@
   <!--主体部分结束--> 
 </div>
 
+
 <article class="htmleaf-container" style="display:none;">
   <div class="demo">
     <header class="demo__header"></header>
@@ -71,18 +72,23 @@
     <div class="demo__card-cont">
       <div class="demo__card">
       <div class="demo__card__top brown">
-        <div class="demo__card__img">
-                <foreach name="photos_1" item="vo">
-                    <span><img src="{:cmf_get_image_url($vo.url)}"></span>
-               </foreach>
-          </div>
+        <div class="demo__card__img"><img src="images/11.jpg"></div>
       </div>
       </div>
+
+    <foreach name="photos_1" item="vo">
+        <div class="demo__card">
+            <div class="demo__card__top brown">
+            <div class="demo__card__img"><img src="{:cmf_get_image_url($vo.url)}"></div>
+            </div>
+        </div>
+     </foreach>
 
     </div>
     </div>
   </div>
 </article>
+
 <script src="__TMPL__/public/assets/js/stopExecutionOnTimeout.js?t=1"></script>
 <script src="__TMPL__/public/assets/js/jquery-2.1.1.min.js"></script>
 
