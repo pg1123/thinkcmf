@@ -84,6 +84,7 @@ class YueduController extends HomeBaseController
         $this->assign('photos_1', array_slice($photos, 0,4));
         $this->assign('photos_2', array_slice($photos, 4,3));
         $this->assign('photos_3', array_slice($photos, 7,3));
+        //print_r(array_slice($photos, 7,3));exit;
         $tplName = empty($article['more']['template']) ? $tplName : $article['more']['template'];
         return $this->fetch(":ydinfo");
     }
