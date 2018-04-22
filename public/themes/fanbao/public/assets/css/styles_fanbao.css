@@ -142,5 +142,5 @@
   text-align: center;
   font-size: 2.2rem;
 }
-.demo__card__img{ margin-top:-40px; height:100%; bottom:0; position:fixed;}
-.demo__card__img img{ width:100%;}
+.demo__card__img{ height:100%; bottom:0; position:fixed;}
+.demo__card__img img{ width:100%; margin-top:-40px;}
