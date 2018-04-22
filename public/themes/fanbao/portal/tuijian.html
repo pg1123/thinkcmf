@@ -27,11 +27,13 @@
                 <?php
                     $keywords = explode(',',$art['post_keywords']);
                 ?>
-                <foreach name="keywords" item="keword" >
-                    <if condition="$key == 0 ">
-                        <span>{$keword}</span>
-                    <else />
-                        <span class="sp1">{$keword}</span>
+                <foreach name="keywords" item="keyword" >
+                    <if condition="!empty($keyword)">
+                      <if condition="$key == 0">
+                          <span>{$keyword}</span>
+                      <else />
+                          <span class="sp1">{$keyword}</span>
+                      </if>
                     </if>
                 </foreach>
                 </h2>
