@@ -20,7 +20,7 @@ class YueduController extends HomeBaseController
     public function index()
     {
 
-        $articles =ApiService::articles(['category_ids'=>'1'])['articles'];
+        $articles =ApiService::articles(['category_ids'=>'2'])['articles'];
         //print_r($articles);exit;
         //$article = Db::name('portal_post')->where('id',1)->find();
         //$articles = Db::name('portal_post')->select();
