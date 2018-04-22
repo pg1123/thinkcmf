@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>饭宝赚</title>
 <link href="__TMPL__/public/assets/css/style_fanbao.css" type="text/css" rel="stylesheet">
+<link href="__TMPL__/public/assets/css/styles_fanbao.css" type="text/css" rel="stylesheet">
 </head>
 <body class="fbz">
 <div id="fbz"> 
@@ -62,5 +63,109 @@
   </div>
   <!--主体部分结束--> 
 </div>
+
+<article class="htmleaf-container" style="display:none;">
+  <div class="demo">
+    <header class="demo__header"></header>
+    <div class="demo__content">
+    <div class="demo__card-cont">
+      <div class="demo__card">
+      <div class="demo__card__top brown">
+        <div class="demo__card__img">
+                <foreach name="photos_1" item="vo">
+                    <span><img src="{:cmf_get_image_url($vo.url)}"></span>
+               </foreach>
+          </div>
+      </div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</article>
+<script src="__TMPL__/public/assets/js/stopExecutionOnTimeout.js?t=1"></script>
+<script src="__TMPL__/public/assets/js/jquery-2.1.1.min.js"></script>
+
+<script>
+$(document).ready(function () {
+  var animating = false;
+  var cardsCounter = 0;
+  var numOfCards = 4;
+  var decisionVal = 80;
+  var pullDeltaX = 0;
+  var deg = 0;
+  var $card, $cardReject, $cardLike;
+  function pullChange() {
+    animating = true;
+    deg = pullDeltaX / 10;
+    $card.css('transform', 'translateX(' + pullDeltaX + 'px) rotate(' + deg + 'deg)');
+    var opacity = pullDeltaX / 100;
+    var rejectOpacity = opacity >= 0 ? 0 : Math.abs(opacity);
+    var likeOpacity = opacity <= 0 ? 0 : opacity;
+    $cardReject.css('opacity', rejectOpacity);
+    $cardLike.css('opacity', likeOpacity);
+  }
+  ;
+  function release() {
+    if (pullDeltaX >= decisionVal) {
+      $card.addClass('to-right');
+    } else if (pullDeltaX <= -decisionVal) {
+      $card.addClass('to-left');
+    }
+    if (Math.abs(pullDeltaX) >= decisionVal) {
+      $card.addClass('inactive');
+      setTimeout(function () {
+        $card.addClass('below').removeClass('inactive to-left to-right');
+        cardsCounter++;
+        if (cardsCounter === numOfCards) {
+          cardsCounter = 0;
+          $('.demo__card').removeClass('below');
+        }
+      }, 300);
+    }
+    if (Math.abs(pullDeltaX) < decisionVal) {
+      $card.addClass('reset');
+    }
+    setTimeout(function () {
+      $card.attr('style', '').removeClass('reset').find('.demo__card__choice').attr('style', '');
+      pullDeltaX = 0;
+      animating = false;
+    }, 300);
+  };
+  $(document).on('mousedown touchstart', '.demo__card:not(.inactive)', function (e) {
+    if (animating)
+      return;
+    $card = $(this);
+    $cardReject = $('.demo__card__choice.m--reject', $card);
+    $cardLike = $('.demo__card__choice.m--like', $card);
+    var startX = e.pageX || e.originalEvent.touches[0].pageX;
+    $(document).on('mousemove touchmove', function (e) {
+      var x = e.pageX || e.originalEvent.touches[0].pageX;
+      pullDeltaX = x - startX;
+      if (!pullDeltaX)
+        return;
+      pullChange();
+    });
+    $(document).on('mouseup touchend', function () {
+      $(document).off('mousemove touchmove mouseup touchend');
+      if (!pullDeltaX)
+        return;
+      release();
+    });
+  });
+});
+
+$(function(){
+  $("span img").click(function(){
+    $("article").show();
+    })
+  $("article img").click(function(){
+    $("article").hide();
+    })
+  })
+</script>
+
+
 </body>
+
 </html>
