@@ -381,7 +381,11 @@ nav li p {
 .main_mgf img{ width:100%;}
 .main_mgf{ text-align:center; color:#fff; padding:10px; padding-top:20px;}
 .main_mgf h4{ font-size:18px; display:block; width:100%;}
-.main_mgf p{ font-size:13px; line-height:20px; margin-top:10px;}
+.main_mgf p{ font-size:14px; line-height:20px; margin-top:10px;}
+.ewm { text-align:center; padding:20px 0;}
+.ewm img{ width:50%; margin-bottom:6px;}
+.ewm h5{ font-size:14px; font-weight:normal; color:#b71c2e;}
+
 
 
 
