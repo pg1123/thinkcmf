@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:33:"themes/fanbao/portal/article.html";i:1524147492;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:33:"themes/fanbao/portal/article.html";i:1524391040;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -21,7 +21,7 @@
           <h1><?php echo str_replace('到','~',$article['post_excerpt'])  ?><span>元起</span></h1>
           <strong>试玩任务奖励</strong>
           <ul class=" clearfix">
-             <li><i class="fa fa-weixin" aria-hidden="true"></i><p>支付宝</p></li>
+             <li><i class="fa fa-zhi" aria-hidden="true"></i><p>支付宝</p></li>
              <li><i class="fa fa-weixin" aria-hidden="true"></i><p>微信</p></li>
              <li><i class="fa fa-jpy" aria-hidden="true"></i><p>10元提现</p></li>
           </ul>
@@ -48,7 +48,7 @@
        <h2>平台介绍</h2>
        <p>为你提供超多好玩的应用，试玩应用还能领取丰厚的现金红包，赶快加入吧~</p>
        <?php if(is_array($photos) || $photos instanceof \think\Collection || $photos instanceof \think\Paginator): if( count($photos)==0 ) : echo "" ;else: foreach($photos as $key=>$vo): ?>
-            <a href="#"><img src="<?php echo cmf_get_image_url($vo['url']); ?>"></a>
+            <a href="#"><img class="pho" src="<?php echo cmf_get_image_url($vo['url']); ?>"></a>
         <?php endforeach; endif; else: echo "" ;endif; ?>
        </div>
        <div class="lmain5 clearfix">
@@ -78,5 +78,10 @@
     $('#start').on('click', function(event) {
         event.preventDefault();
         window.location.href = $(this).data('url');
+    });
+
+    $('.pho').on('click', function(event) {
+      event.preventDefault();
+      $(this).toggleClass('fangda');
     });
 </script>
