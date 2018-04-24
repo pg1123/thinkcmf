@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:31:"themes/fanbao/portal/index.html";i:1524361093;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:31:"themes/fanbao/portal/index.html";i:1524555224;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -99,9 +99,9 @@
              </a>
              </li>
              <li>
-             <a href="#">
+             <a href="<?php echo cmf_url('portal/Fanbaoquan/index'); ?>">
              <i class="fa fa-bookmark-o" aria-hidden="true"></i>
-             <p>早起赚钱</p>
+             <p>饭宝券</p>
              </a>
              </li>
           </ul>
