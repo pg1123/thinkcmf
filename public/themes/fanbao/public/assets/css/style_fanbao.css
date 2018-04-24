@@ -377,8 +377,8 @@ nav li p {
 
 /*quan*/
 .mgf{ background:#fe4e63;}
-.main_mgf{ padding:0;}
-.main_mgf img{ width:100%;}
+.main_mgf1 { padding:0;}
+.main_mgf1 img{ width:100%;}
 .main_mgf{ text-align:center; color:#fff; padding:20px; }
 .main_mgf h4{ font-size:18px; display:block; width:100%;}
 .main_mgf p{ font-size:14px; line-height:20px; margin-top:10px;}
