@@ -13,22 +13,15 @@
        <div class="fan-slider">
       <div id="fan-home-slider" class="flexslider">
         <ul class="slides">
+           <foreach name="banners" item="ban">
+             <?php 
+               $url = $ban['more']['photos'][0]['url']; 
+              ?>
           <li>
-            <div class="slide"> <img src="__TMPL__/public/assets/images/fanbao/img0.jpg" alt="" />
+            <div class="slide"> <img src="{:cmf_get_image_url($url)}" alt="" />
             </div>
           </li>
-          <li>
-            <div class="slide"> <img src="__TMPL__/public/assets/images/fanbao/img1.jpg" alt="" /></div>
-          </li>
-          <li>
-            <div class="slide"> <img src="__TMPL__/public/assets/images/fanbao/img2.jpg" alt="" /></div>
-          </li>
-          <li>
-            <div class="slide"> <img src="__TMPL__/public/assets/images/fanbao/img3.jpg" alt="" /></div>
-          </li>
-          <li>
-            <div class="slide"> <img src="__TMPL__/public/assets/images/fanbao/img4.jpg" alt="" /></div>
-          </li>
+          </foreach>
         </ul>
       </div>
     </div>

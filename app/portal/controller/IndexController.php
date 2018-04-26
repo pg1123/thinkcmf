@@ -21,10 +21,13 @@ class IndexController extends HomeBaseController
     {
 
         $articles =ApiService::articles(['category_ids'=>'1'])['articles'];
+        $banners =ApiService::articles(['category_ids'=>'3'])['articles'];
         //print_r($articles);exit;
         //$article = Db::name('portal_post')->where('id',1)->find();
         //$articles = Db::name('portal_post')->select();
+        //print_r($banners);exit;
         $this->assign('articles',$articles);
+        $this->assign('banners', $banners);
         //print_r($article);exit;
         return $this->fetch(':index');
     }
