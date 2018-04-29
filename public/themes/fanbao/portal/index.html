@@ -47,14 +47,15 @@
           <div class="clearfix"><h2>赚钱优先</h2><span>12600人正在试玩中</span></div>
           <ul>
              <foreach name="articles" item="art">
-             <li><a href="{:cmf_url('portal/Article/index',array('id'=>$art.id,'cid'=>$art.category_id))}">
+             <li><a href="{:cmf_url('portal/Article/index',array('id'=>$art.id,'cid'=>$art.category_id, 'sid' => $key+1))}">
                <!--  <img src="__TMPL__/public/assets/images/fanbao/logo1.jpg"> -->
                <?php 
                $url = $art['more']['thumbnail']; 
                ?>
                 <img src=" {:cmf_get_image_url($url)}"/>
                 <h2>
-                {$art.post_title}
+                <!-- {$art.post_title} -->
+                试玩平台 {$key+1}
                 <?php
                     $keywords = explode(',',$art['post_keywords']);
                 ?>

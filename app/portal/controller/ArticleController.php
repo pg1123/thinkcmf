@@ -26,6 +26,7 @@ class ArticleController extends HomeBaseController
 
         $articleId  = $this->request->param('id', 0, 'intval');
         $categoryId = $this->request->param('cid', 0, 'intval');
+        $sortId = $this->request->param('sid', 0, 'intval');
         $article    = $postService->publishedArticle($articleId, $categoryId);
 
         if (empty($article)) {
@@ -64,6 +65,7 @@ class ArticleController extends HomeBaseController
 
         hook('portal_before_assign_article', $article);
 
+        $this->assign('sortId', $sortId);
         $this->assign('article', $article);
         $this->assign('prev_article', $prevArticle);
         $this->assign('next_article', $nextArticle);
