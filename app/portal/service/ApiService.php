@@ -58,6 +58,9 @@ class ApiService
             'post.delete_time'    => 0
         ];
 
+        if (isset($param['recommended']) and $param['recommended'] == 1){
+            $where = array_merge($where, ['post.recommended' => 1]);
+        }
         $paramWhere = empty($param['where']) ? '' : $param['where'];
 
         $limit       = empty($param['limit']) ? 30 : $param['limit'];
@@ -89,7 +92,6 @@ class ApiService
             $field = !empty($param['field']) ? $param['field'] : 'post.*,min(category_post.category_id) as category_id';
             array_push($join, ['__PORTAL_CATEGORY_POST__ category_post', 'post.id = category_post.post_id']);
         }
-
         $articles = $portalPostModel->alias('post')->field($field)
             ->join($join)
             ->where($where)

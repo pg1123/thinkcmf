@@ -19,12 +19,13 @@ class TuijianController extends HomeBaseController
 {
     public function index()
     {
-
-        $articles =ApiService::articles(['category_ids'=>'1'])['articles'];
-        //print_r($articles);exit;
+        $articlesTuijian =ApiService::articles(array(
+            'category_ids' => 1,
+            'recommended' => 1
+        ))['articles'];
         //$article = Db::name('portal_post')->where('id',1)->find();
         //$articles = Db::name('portal_post')->select();
-        $this->assign('articles',$articles);
+        $this->assign('articles',$articlesTuijian);
         //print_r($article);exit;
         return $this->fetch(':tuijian');
     }
