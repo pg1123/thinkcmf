@@ -8,20 +8,20 @@
 // +----------------------------------------------------------------------
 
 //weixin
-//1. timestamp, nonce, token sort
-$timestamp = $GET['timestamp'];
-$nonce = $GET['nonce'];
-$token = 'weixin';
-$signature = $GET['signature'];
-$array = array($timestamp, $nonce, $token);
-sort($array);
-//2. sha1
-$tmpstr = implode(' ', $array); //join
-$tmpstr = sha1( $tmpstr );
-//3. duibi, pan duan http shi fou lai zi weixin 
-if ($tmpstr == $signature) {
-	echo $GET['echostr'];
-	exit;
+//1. 将nonce，timestamp，token按字典顺序排序
+$nonce = $_GET['nonce'];     //微信公众平台提供
+$timestamp = $_GET['timestamp'];    //微信公众平台提供
+$token = 'weixin';    //自己在微信公众平台的配置中设置的令牌（token）
+$signature = $_GET['signature'];    //微信公众平台提供
+$arr = array($nonce, $timestamp, $token);
+sort($arr);    //将nonce，timestamp，token按字典顺序排序
+//2. 将排序后的三个参数拼接之后用sha1加密
+$tempstr = implode('', $arr);
+$tempstr = sha1($tempstr);
+//3. 将加密后的字符串与signature进行对比，判断该请求是否来自微信
+if($tempstr == $signature){
+	echo $_GET['echostr'];
+	exit();
 }
 
 
