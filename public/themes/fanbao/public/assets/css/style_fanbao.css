@@ -409,7 +409,7 @@ nav li p {
     display: inline-block;
     position: relative;
     width: 100%;
-    height: 100%;
+    height: auto;
     text-align: center;
 }
 #baguetteBox-overlay .full-image figure {
@@ -421,7 +421,7 @@ nav li p {
     display: inline-block;
     width: 100%;
     height: auto;
-    max-height: 120%;
+    max-height: auto;
     max-width: 100%;
     vertical-align: middle;
     -webkit-box-shadow: 0 0 8px rgba(0,0,0,.6);
