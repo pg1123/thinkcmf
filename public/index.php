@@ -7,6 +7,25 @@
 // | Author: 老猫 <zxxjjforever@163.com>
 // +----------------------------------------------------------------------
 
+//weixin
+//1. timestamp, nonce, token sort
+$timestamp = $GET['timestamp'];
+$nonce = $GET['nonce'];
+$token = 'weixin';
+$signature = $GET['signature'];
+$array = array($timestamp, $nonce, $token);
+//2. sha1
+$tmpstr = implode(' ', $array); //join
+$tmpstr = sha1( $tmpstr );
+//3. duibi, pan duan http shi fou lai zi weixin 
+if ($tmpstr == $signature) {
+	echo $GET['echostr'];
+	exit;
+}
+
+
+
+
 // [ 入口文件 ]
 
 // 调试模式开关
