@@ -31,4 +31,10 @@ class IndexController extends HomeBaseController
         //print_r($article);exit;
         return $this->fetch(':index');
     }
+
+    // shi wan gong lue
+    public function gonglue()
+    {
+        return $this->fetch(':gonglue');
+    }
 }

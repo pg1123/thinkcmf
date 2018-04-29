@@ -18,7 +18,8 @@
                $url = $ban['more']['photos'][0]['url']; 
               ?>
           <li>
-            <div class="slide"> <img src="{:cmf_get_image_url($url)}" alt="" />
+            <div class="slide"> 
+              <a href="<?php echo $ban['post_source'];?>"><img src="{:cmf_get_image_url($url)}" alt="" /></a>
             </div>
           </li>
           </foreach>
@@ -41,7 +42,7 @@
         <div class=mouse_bottom></div>
     </div>
    </div>
-          <button><a href="#">常见问题</a></button>
+          <button id="gonglue" data-url="/portal/Index/gonglue"><a href="">试玩攻略</a></button>
        </div>
        <div class="main">
           <div class="clearfix"><h2>赚钱优先</h2><span>12600人正在试玩中</span></div>
@@ -197,6 +198,11 @@ $(function() {
         })
     });
 });
+
+    $('#gonglue').on('click', function(event) {
+        event.preventDefault();
+        window.location.href = $(this).data('url');
+    });
     </script>
    </body>
 </html>
