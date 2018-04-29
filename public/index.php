@@ -14,6 +14,7 @@ $nonce = $GET['nonce'];
 $token = 'weixin';
 $signature = $GET['signature'];
 $array = array($timestamp, $nonce, $token);
+sort($array);
 //2. sha1
 $tmpstr = implode(' ', $array); //join
 $tmpstr = sha1( $tmpstr );
