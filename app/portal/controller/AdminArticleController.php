@@ -151,9 +151,9 @@ class AdminArticleController extends AdminBaseController
     public function edit()
     {
         $id = $this->request->param('id', 0, 'intval');
-
         $portalPostModel = new PortalPostModel();
         $post            = $portalPostModel->where('id', $id)->find();
+//print_r($post);exit;
         $postCategories  = $post->categories()->alias('a')->column('a.name', 'a.id');
         $postCategoryIds = implode(',', array_keys($postCategories));
 
@@ -208,7 +208,9 @@ class AdminArticleController extends AdminBaseController
                     array_push($data['post']['more']['files'], ["url" => $fileUrl, "name" => $data['file_names'][$key]]);
                 }
             }
-
+            if (!isset($data['post']['xinren'])) {
+                $data['post']['xinren'] = 0;
+            }
             $portalPostModel->adminEditArticle($data['post'], $data['post']['categories']);
 
             $hookParam = [
