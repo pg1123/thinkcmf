@@ -363,12 +363,12 @@ nav li p {
 .yd2 p{ padding-bottom:10px; line-height:20px;}
 .yd2_b .yd2_bb{ width:150%; overflow-x:scroll;}
 .yd2 span{float:left;width:100px;margin-right:10px; display:block; height:180px; overflow:hidden;}
-.yd2 .yd2_bb img{ width:100%;}
-.yd2 .yd2_bb a{width:100px; display:block; float:left;margin-right:10px;}
+.yd2 .yd2_bb img ,.yd2 .yd3_ba img  { width:100%;}
+.yd2 .yd2_bb a ,.yd2 .yd3_ba a{width:100px; display:block; float:left;margin-right:10px;}
 .yd3 .yd2_b{ position:inherit; overflow-x:auto;}
 .yd3 h3{ font-weight:normal; font-size:13px; color:#79101b; padding:20px 0;}
 .yd3 h4{ font-weight:normal; background-color:#b93643; border-radius:10px ; padding:20px 15px;}
-.yd3 a{    width: 90%;
+.yd3 .ljxz{    width: 90%;
     height: 50px;
     border-radius: 50px;
     background:#9593E4;

@@ -44,8 +44,7 @@
   <p>1、点击注册并下载APP，登录后可随机领取1元+现金红包<br/>
   2、绑定微信可获得200狐币</p>
   <div class="yd3_b">
-  <div class="clearfix">
-
+  <div class="clearfix yd3_ba">
     <div class="baguetteBoxOne gallery">
            <foreach name="photos_2" item="vo">
                 <a href="{:cmf_get_image_url($vo.url)}"><img  src="{:cmf_get_image_url($vo.url)}"></a>
@@ -60,15 +59,15 @@
   <p>1、媒体签到：连续签到7天可获得180狐币<br/>
   2、限时抢：7：00、9:00、12:00/18:00/21:00参与抢红包，最高可得50狐币</p>
   <div class="yd3_b">
-  <div class="clearfix">
-  <foreach name="photos_3" item="vo">
-    <span><img src="{:cmf_get_image_url($vo.url)}"></span>
-  </foreach>
+  <div class="clearfix yd3_ba">
+   <foreach name="photos_3" item="vo">
+                <a href="{:cmf_get_image_url($vo.url)}"><img  src="{:cmf_get_image_url($vo.url)}"></a>
+    </foreach>
   </div>
   </div>
   <h3>*当天赚取的金币会在第二天自动转换为零钱到您的零钱账户中，可随时提现</h3>
   <h4>还有分享赚钱、晒收入赚钱、转发赚钱、评论赚钱、答题赚钱等着你，还不赶快去试试！</h4>
-  <a href="#">立即下载</a>
+  <a href="#" class="ljxz">立即下载</a>
   </div>
   <!--主体部分结束--> 
 </div>
