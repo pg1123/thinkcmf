@@ -11,7 +11,7 @@
 <body class="fbz">
 <div id="fbz"> 
   <!--头部开始-->
-  <div class="header"> <a href="index.html"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+  <div class="header"> <a href="/"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
     <p>平台详情</p>
   </div>
   <!--头部结束--> 
@@ -28,10 +28,14 @@
   <h2>平台介绍</h2>
   <p>在这里不仅可以看海量精彩资讯，还可以获得丰厚的现金和狐币奖励</p>
   <div class="yd2_b">
-  <div class="clearfix">
-  <foreach name="photos_1" item="vo">
-            <span><img src="{:cmf_get_image_url($vo.url)}"></span>
-    </foreach>
+  <div class="clearfix yd2_bb">
+
+       <div class="baguetteBoxOne gallery">
+           <foreach name="photos_1" item="vo">
+                <a href="{:cmf_get_image_url($vo.url)}"><img  src="{:cmf_get_image_url($vo.url)}"></a>
+            </foreach>
+       </div>
+
   </div>
   </div>
   </div>
@@ -41,9 +45,14 @@
   2、绑定微信可获得200狐币</p>
   <div class="yd3_b">
   <div class="clearfix">
-    <foreach name="photos_2" item="vo">
-      <span><img src="{:cmf_get_image_url($vo.url)}"></span>
-    </foreach>  </div>
+
+    <div class="baguetteBoxOne gallery">
+           <foreach name="photos_2" item="vo">
+                <a href="{:cmf_get_image_url($vo.url)}"><img  src="{:cmf_get_image_url($vo.url)}"></a>
+            </foreach>
+     </div>
+
+  </div>
   </div>
   </div>
   <div class="yd2 yd3">
@@ -65,110 +74,13 @@
 </div>
 
 
-<article class="htmleaf-container" style="display:none;">
-  <div class="demo">
-    <header class="demo__header"></header>
-    <div class="demo__content">
-    <div class="demo__card-cont">
-      <div class="demo__card">
-      <div class="demo__card__top brown">
-        <div class="demo__card__img"><img src="images/11.jpg"></div>
-      </div>
-      </div>
+<script src="__TMPL__/public/assets/js/baguettebox.min.js"></script>
 
-    <foreach name="photos_1" item="vo">
-        <div class="demo__card">
-            <div class="demo__card__top brown">
-            <div class="demo__card__img"><img src="{:cmf_get_image_url($vo.url)}"></div>
-            </div>
-        </div>
-     </foreach>
-
-    </div>
-    </div>
-  </div>
-</article>
-
-<script src="__TMPL__/public/assets/js/stopExecutionOnTimeout.js?t=1"></script>
-<script src="__TMPL__/public/assets/js/jquery-2.1.1.min.js"></script>
 
 <script>
-/*$(document).ready(function () {
-  var animating = false;
-  var cardsCounter = 0;
-  var numOfCards = 4;
-  var decisionVal = 80;
-  var pullDeltaX = 0;
-  var deg = 0;
-  var $card, $cardReject, $cardLike;
-  function pullChange() {
-    animating = true;
-    deg = pullDeltaX / 10;
-    $card.css('transform', 'translateX(' + pullDeltaX + 'px) rotate(' + deg + 'deg)');
-    var opacity = pullDeltaX / 100;
-    var rejectOpacity = opacity >= 0 ? 0 : Math.abs(opacity);
-    var likeOpacity = opacity <= 0 ? 0 : opacity;
-    $cardReject.css('opacity', rejectOpacity);
-    $cardLike.css('opacity', likeOpacity);
-  }
-  ;
-  function release() {
-    if (pullDeltaX >= decisionVal) {
-      $card.addClass('to-right');
-    } else if (pullDeltaX <= -decisionVal) {
-      $card.addClass('to-left');
-    }
-    if (Math.abs(pullDeltaX) >= decisionVal) {
-      $card.addClass('inactive');
-      setTimeout(function () {
-        $card.addClass('below').removeClass('inactive to-left to-right');
-        cardsCounter++;
-        if (cardsCounter === numOfCards) {
-          cardsCounter = 0;
-          $('.demo__card').removeClass('below');
-        }
-      }, 300);
-    }
-    if (Math.abs(pullDeltaX) < decisionVal) {
-      $card.addClass('reset');
-    }
-    setTimeout(function () {
-      $card.attr('style', '').removeClass('reset').find('.demo__card__choice').attr('style', '');
-      pullDeltaX = 0;
-      animating = false;
-    }, 300);
-  };
-  $(document).on('mousedown touchstart', '.demo__card:not(.inactive)', function (e) {
-    if (animating)
-      return;
-    $card = $(this);
-    $cardReject = $('.demo__card__choice.m--reject', $card);
-    $cardLike = $('.demo__card__choice.m--like', $card);
-    var startX = e.pageX || e.originalEvent.touches[0].pageX;
-    $(document).on('mousemove touchmove', function (e) {
-      var x = e.pageX || e.originalEvent.touches[0].pageX;
-      pullDeltaX = x - startX;
-      if (!pullDeltaX)
-        return;
-      pullChange();
+baguetteBox.run('.baguetteBoxOne', {
+        animation: 'fadeIn',
     });
-    $(document).on('mouseup touchend', function () {
-      $(document).off('mousemove touchmove mouseup touchend');
-      if (!pullDeltaX)
-        return;
-      release();
-    });
-  });
-});
-*/
-$(function(){
-  $("span img").click(function(){
-    $("article").show();
-    })
-  $("article img").click(function(){
-    $("article").hide();
-    })
-  })
 </script>
 
 
