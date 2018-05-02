@@ -49,11 +49,11 @@ function isMobile(){
         return false;    
     }    
 }  
-/*if (!isMobile())  {
-    echo '正在备案中...暂时不允许访问...';
+if (!isMobile())  {
+    echo '正在备案中...不允许访问...';
     exit;
 }
-*/
+
 
 // [ 入口文件 ]
 
