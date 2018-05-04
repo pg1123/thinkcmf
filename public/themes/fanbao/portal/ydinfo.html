@@ -20,9 +20,9 @@
      $url = $article['more']['thumbnail']; 
    ?>
   <div class="yd1"> <img src="{:cmf_get_image_url($url)}">
-    <h2>搜狐新闻</h2>
+    <h2>{$article.post_title}</h2>
     <p>最高领200元现金</p>
-    <button>立即下载</button>
+    <button class="start" data-url="<?php echo strip_tags($article['post_source']) ?>">立即下载</button>
   </div>
   <div class="yd2">
   <h2>平台介绍</h2>
@@ -69,22 +69,19 @@
   </div>
   <h3>*当天赚取的金币会在第二天自动转换为零钱到您的零钱账户中，可随时提现</h3>
   <h4>还有分享赚钱、晒收入赚钱、转发赚钱、评论赚钱、答题赚钱等着你，还不赶快去试试！</h4>
-  <a href="#" class="ljxz" id="start" data-url="<?php echo strip_tags($article['post_source']) ?>">立即下载</a>
+  <a href="#" class="ljxz start" data-url="<?php echo strip_tags($article['post_source']) ?>">立即下载</a>
   </div>
   <!--主体部分结束--> 
 </div>
-
-
+<script src="__TMPL__/public/assets/js/jquery-1.10.2.min.js"></script>
 <script src="__TMPL__/public/assets/js/baguettebox.min.js"></script>
-
 
 <script>
 baguetteBox.run('.baguetteBoxOne', {
         animation: 'fadeIn',
     });
 
-
-$('#start').on('click', function(event) {
+$('.start').on('click', function(event) {
         event.preventDefault();
         window.location.href = $(this).data('url');
 });

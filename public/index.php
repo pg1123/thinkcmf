@@ -27,7 +27,7 @@ if (isset($_GET['nonce'])) {
 }
 
 //判断是否是手机登录
-function isMobile(){    
+/*function isMobile(){    
     $useragent=isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';    
     $useragent_commentsblock=preg_match('|\(.*?\)|',$useragent,$matches)>0?$matches[0]:'';      
     function CheckSubstrs($substrs,$text){    
@@ -50,15 +50,15 @@ function isMobile(){
     }    
 }  
 if (!isMobile())  {
-    //echo '正在备案中...不允许访问...';
-    //exit;
-}
+    echo '正在备案中...不允许访问...';
+    exit;
+}*/
 
 
 // [ 入口文件 ]
 
 // 调试模式开关
-define("APP_DEBUG", false);
+define("APP_DEBUG", true);
 
 // 定义CMF根目录,可更改此目录
 define('CMF_ROOT', __DIR__ . '/../');
