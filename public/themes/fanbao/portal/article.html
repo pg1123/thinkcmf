@@ -50,7 +50,7 @@
        <div class="lmain4 clearfix">
        <h2>平台介绍</h2>
        <if condition="$article['post_content']">
-        <p><?php echo $article['post_content']; ?><p>
+        <p><?php echo strip_tags($article['post_content']); ?><p>
        <else>
       <p>为你提供超多好玩的应用，试玩应用还能领取丰厚的现金红包，赶快加入吧~</p>
        </if>

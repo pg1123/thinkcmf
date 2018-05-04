@@ -50,8 +50,8 @@ function isMobile(){
     }    
 }  
 if (!isMobile())  {
-    echo '正在备案中...不允许访问...';
-    exit;
+    //echo '正在备案中...不允许访问...';
+    //exit;
 }
 
 
