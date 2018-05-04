@@ -69,7 +69,7 @@
   </div>
   <h3>*当天赚取的金币会在第二天自动转换为零钱到您的零钱账户中，可随时提现</h3>
   <h4>还有分享赚钱、晒收入赚钱、转发赚钱、评论赚钱、答题赚钱等着你，还不赶快去试试！</h4>
-  <a href="#" class="ljxz">立即下载</a>
+  <a href="#" class="ljxz" id="start" data-url="<?php echo strip_tags($vo['post_source']) ?>">立即下载</a>
   </div>
   <!--主体部分结束--> 
 </div>
@@ -82,6 +82,12 @@
 baguetteBox.run('.baguetteBoxOne', {
         animation: 'fadeIn',
     });
+
+
+$('#start').on('click', function(event) {
+        event.preventDefault();
+        window.location.href = $(this).data('url');
+});
 </script>
 
 
