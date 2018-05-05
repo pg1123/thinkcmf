@@ -25,6 +25,23 @@
    .div2 h2{ text-align:center; font-size:20px; font-weight:normal;}
    .div2 h3{ font-size:16px; font-weight:normal; color:#333;}
    .div2 p{ color:#999; padding-top:10px; font-size:14px; line-height:20px;}
+   button {
+    /*  position: absolute;
+      right: 0;
+      top: 25px;
+      width: 90px;
+      height: 34px;*/
+      width: 50%;
+      margin:0 auto;
+      margin-top: 20px;
+      display: block;
+      border-radius: 40px;
+      background:#9593E4;
+      border: none;
+      color: #fff;
+      font-size: 15px;
+      right:15px;0
+    }
    </style>
   </head>
    <body>
@@ -34,6 +51,7 @@
        </div>
        <div class="div1">
           <a href="__TMPL__/public/assets/images/fanbao/video.mp4"><img src="__TMPL__/public/assets/images/fanbao/video_04.jpg"></a>
+             <button id="start">开启赚钱之旅</button>
           <div>
              <img src="__TMPL__/public/assets/images/fanbao/video_08.jpg">
              <h2>任务更新</h2>
@@ -124,3 +142,10 @@
     </div>
    </body>
 </html>
+<script src="__TMPL__/public/assets/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $('#start').on('click', function(event) {
+        event.preventDefault();
+        window.location.href = '/';
+    });
+</script>
