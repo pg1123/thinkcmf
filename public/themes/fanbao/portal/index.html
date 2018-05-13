@@ -10,7 +10,7 @@
    <body>
     <div id="fbz">
        <!--焦点图滚动开始-->
-       <div class="fan-slider">
+       <!-- <div class="fan-slider">
       <div id="fan-home-slider" class="flexslider">
         <ul class="slides">
            <foreach name="banners" item="ban">
@@ -25,7 +25,7 @@
           </foreach>
         </ul>
       </div>
-    </div>
+    </div> -->
        <!--焦点图滚动结束-->
        <!--主体部分开始-->
        
@@ -42,13 +42,18 @@
         <div class=mouse_bottom></div>
     </div>
    </div>
-          <button id="gonglue" data-url="/portal/Index/gonglue"><a href="">试玩攻略</a></button>
+          <button id="gonglue" data-url="/portal/Index/gonglue"><a href="">新手必读</a></button>
        </div>
        <div class="main">
-          <div class="clearfix"><h2>赚钱优先</h2><span>726人正在试玩中</span></div>
+          <div class="clearfix"><h2>安卓试玩平台</h2><span>726人正在试玩中</span></div>
           <ul>
              <foreach name="articles" item="art">
-             <li><a href="{:cmf_url('portal/Article/index',array('id'=>$art.id,'cid'=>$art.category_id, 'sid' => $key+1))}">
+             <li>
+             <!--  <if condition="$art['xinren'] == 1 ">
+                  <a href="{:cmf_url('portal/Article/index',array('id'=>$art.id,'cid'=>$art.category_id, 'sid' => $key+1))}">
+              <else> -->
+                  <a href="<?php echo strip_tags($art['post_source']) ?>">
+              <!-- </if> -->
                <!--  <img src="__TMPL__/public/assets/images/fanbao/logo1.jpg"> -->
                <?php 
                $url = $art['more']['thumbnail']; 
@@ -70,7 +75,7 @@
                     </if>
                 </foreach>
                 </h2>
-                <p>每单试玩奖励{$art.post_excerpt}元</p>
+                <p>{$art.post_excerpt}</p>
                 <button>去赚钱</button>
              </a></li>
              </foreach>
