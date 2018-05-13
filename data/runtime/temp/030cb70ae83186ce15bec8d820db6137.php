@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:33:"themes/fanbao/portal/article.html";i:1524391040;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:33:"themes/fanbao/portal/article.html";i:1526176613;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -33,23 +33,33 @@
            ?>
            <img src=" <?php echo cmf_get_image_url($url); ?>"/>
 <!--           <img src="/themes/fanbao/public/assets/images/fanbao/logo1.jpg"> -->
-          <p>试玩平台1</p>
+          <p>试玩平台 <?php echo $sortId; ?></p>
           <button id="start" data-url="<?php echo strip_tags($article['post_source']) ?>">开始赚钱</button>
           <h3>任务更新时间集中在15:00~18:00</h3>
        </div>
+
+       <?php if($article['xinren'] == 1): ?>
        <div class="lmain3 clearfix">
        <p>特别注意：该平台任务助手下载安装后需要在“设置-通用-设备管理”中添加信任方可使用</p>
-       <img src="/themes/fanbao/public/assets/images/fanbao/1.jpg">
-       <img src="/themes/fanbao/public/assets/images/fanbao/2.jpg">
-       <img src="/themes/fanbao/public/assets/images/fanbao/3.jpg">
-       <img src="/themes/fanbao/public/assets/images/fanbao/4.jpg">
+       <img src="/themes/fanbao/public/assets/images/fanbao/1.png">
+       <img src="/themes/fanbao/public/assets/images/fanbao/2.png">
+       <img src="/themes/fanbao/public/assets/images/fanbao/3.png">
+       <img src="/themes/fanbao/public/assets/images/fanbao/4.png">
        </div>
+       <?php endif; ?>
+
        <div class="lmain4 clearfix">
        <h2>平台介绍</h2>
-       <p>为你提供超多好玩的应用，试玩应用还能领取丰厚的现金红包，赶快加入吧~</p>
-       <?php if(is_array($photos) || $photos instanceof \think\Collection || $photos instanceof \think\Paginator): if( count($photos)==0 ) : echo "" ;else: foreach($photos as $key=>$vo): ?>
-            <a href="#"><img class="pho" src="<?php echo cmf_get_image_url($vo['url']); ?>"></a>
-        <?php endforeach; endif; else: echo "" ;endif; ?>
+       <?php if($article['post_content']): ?>
+        <p><?php echo strip_tags($article['post_content']); ?><p>
+       <?php else: ?>
+      <p>为你提供超多好玩的应用，试玩应用还能领取丰厚的现金红包，赶快加入吧~</p>
+       <?php endif; ?>
+       <div class="baguetteBoxOne gallery">
+           <?php if(is_array($photos) || $photos instanceof \think\Collection || $photos instanceof \think\Paginator): if( count($photos)==0 ) : echo "" ;else: foreach($photos as $key=>$vo): ?>
+                <a href="<?php echo cmf_get_image_url($vo['url']); ?>"><img  src="<?php echo cmf_get_image_url($vo['url']); ?>"></a>
+            <?php endforeach; endif; else: echo "" ;endif; ?>
+       </div>
        </div>
        <div class="lmain5 clearfix">
        <h2>下载此平台的人也下载了</h2>
@@ -74,14 +84,21 @@
    </body>
 </html>
 <script src="/themes/fanbao/public/assets/js/jquery-1.10.2.min.js"></script>
+<script src="/themes/fanbao/public/assets/js/baguettebox.min.js"></script>
 <script type="text/javascript">
     $('#start').on('click', function(event) {
         event.preventDefault();
         window.location.href = $(this).data('url');
     });
 
-    $('.pho').on('click', function(event) {
+    // tupian fangda suoxiao
+    baguetteBox.run('.baguetteBoxOne', {
+        animation: 'fadeIn',
+    });
+
+    /*$('.pho').on('click', function(event) {
       event.preventDefault();
       $(this).toggleClass('fangda');
     });
+*/    
 </script>
