@@ -646,8 +646,9 @@ transform:scale(1)
     z-index:11;
 }
 
-.fbz{ background:url(../images/fanbao/bg.JPG) no-repeat; background-size:cover;background-attachment: fixed; }
+.fbz{ background-image:url(../images/fanbao/bg.JPG); background-size:cover;background-repeat: no-repeat; background-attachment: fixed; }
 .header{ background-color:#333;  }
 .lmain1 strong ,.lmain2 button{ background:#ff4d5f;}
 .yd3 h3 {color: #eac1ef;}
 .yd3 h4 {background-color: #ffffff;color: #333;}
+
