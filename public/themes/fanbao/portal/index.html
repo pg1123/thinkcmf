@@ -49,11 +49,11 @@
           <ul>
              <foreach name="articles" item="art">
              <li>
-              <if condition="$art['xinren'] == 1 ">
+             <!--  <if condition="$art['xinren'] == 1 ">
                   <a href="{:cmf_url('portal/Article/index',array('id'=>$art.id,'cid'=>$art.category_id, 'sid' => $key+1))}">
-              <else>
+              <else> -->
                   <a href="<?php echo strip_tags($art['post_source']) ?>">
-              </if>
+              <!-- </if> -->
                <!--  <img src="__TMPL__/public/assets/images/fanbao/logo1.jpg"> -->
                <?php 
                $url = $art['more']['thumbnail']; 
