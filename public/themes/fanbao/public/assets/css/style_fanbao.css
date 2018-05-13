@@ -648,8 +648,14 @@ transform:scale(1)
     z-index:11;
 }
 
-.fbz{ background-image:url(../images/fanbao/bg.JPG); background-size:cover;background-repeat: no-repeat; background-attachment: fixed; }
-.header{ background-color:#333;  }
+.fbz{  background: -moz-linear-gradient(top, #8f61bb 0%, #c872cb 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8f61bb), color-stop(100%,#c872cb));
+    background: -webkit-linear-gradient(top, #8f61bb 0%,#c872cb 100%);
+    background: -o-linear-gradient(top, #8f61bb 0%,#c872cb 100%);
+    background: -ms-linear-gradient(top, #8f61bb 0%,#c872cb 100%);
+    background: linear-gradient(to bottom, #8f61bb 0%,#c872cb 100%);
+ }
+ .header{ background-color:#333;  }
 .lmain1 strong ,.lmain2 button{ background:#ff4d5f;}
 .yd3 h3 {color: #eac1ef;}
 .yd3 h4 {background-color: #ffffff;color: #333;}
