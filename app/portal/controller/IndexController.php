@@ -19,10 +19,10 @@ class IndexController extends HomeBaseController
 {
     public function index()
     {
-        /*if (!$this->isMobile()){
+        if (!$this->isMobile()){
             echo '请用手机登录fanbazhuan.com，公众号:fanbaozhuan';
             exit;
-        }*/
+        }
         $articles =ApiService::articles(['category_ids'=>'1'])['articles'];
         $banners =ApiService::articles(['category_ids'=>'3'])['articles'];
         //print_r($articles);exit;

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:31:"themes/fanbao/portal/index.html";i:1524555224;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:31:"themes/fanbao/portal/index.html";i:1526542136;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -11,28 +11,21 @@
    <body>
     <div id="fbz">
        <!--焦点图滚动开始-->
-       <div class="fan-slider">
+       <!-- <div class="fan-slider">
       <div id="fan-home-slider" class="flexslider">
         <ul class="slides">
+           <?php if(is_array($banners) || $banners instanceof \think\Collection || $banners instanceof \think\Paginator): if( count($banners)==0 ) : echo "" ;else: foreach($banners as $key=>$ban): 
+               $url = $ban['more']['photos'][0]['url']; 
+              ?>
           <li>
-            <div class="slide"> <img src="/themes/fanbao/public/assets/images/fanbao/img0.jpg" alt="" />
+            <div class="slide"> 
+              <a href="<?php echo $ban['post_source'];?>"><img src="<?php echo cmf_get_image_url($url); ?>" alt="" /></a>
             </div>
           </li>
-          <li>
-            <div class="slide"> <img src="/themes/fanbao/public/assets/images/fanbao/img1.jpg" alt="" /></div>
-          </li>
-          <li>
-            <div class="slide"> <img src="/themes/fanbao/public/assets/images/fanbao/img2.jpg" alt="" /></div>
-          </li>
-          <li>
-            <div class="slide"> <img src="/themes/fanbao/public/assets/images/fanbao/img3.jpg" alt="" /></div>
-          </li>
-          <li>
-            <div class="slide"> <img src="/themes/fanbao/public/assets/images/fanbao/img4.jpg" alt="" /></div>
-          </li>
+          <?php endforeach; endif; else: echo "" ;endif; ?>
         </ul>
       </div>
-    </div>
+    </div> -->
        <!--焦点图滚动结束-->
        <!--主体部分开始-->
        
@@ -49,33 +42,52 @@
         <div class=mouse_bottom></div>
     </div>
    </div>
-          <button><a href="#">常见问题</a></button>
+          <button id="gonglue" data-url="/portal/Index/gonglue"><a href="">新手必读</a></button>
        </div>
        <div class="main">
-          <div class="clearfix"><h2>赚钱优先</h2><span>12600人正在试玩中</span></div>
+          <div class="clearfix"><h2>安卓试玩平台</h2><span>3600人正在试玩中</span></div>
           <ul>
              <?php if(is_array($articles) || $articles instanceof \think\Collection || $articles instanceof \think\Paginator): if( count($articles)==0 ) : echo "" ;else: foreach($articles as $key=>$art): ?>
-             <li><a href="<?php echo cmf_url('portal/Article/index',array('id'=>$art['id'],'cid'=>$art['category_id'])); ?>">
+             <li>
+             <!--  <?php if($art['xinren'] == 1): ?>
+                  <a href="<?php echo cmf_url('portal/Article/index',array('id'=>$art['id'],'cid'=>$art['category_id'], 'sid' => $key+1)); ?>">
+              <?php else: ?> -->
+                  <a href="<?php echo strip_tags($art['post_source']) ?>">
+              <!-- <?php endif; ?> -->
                <!--  <img src="/themes/fanbao/public/assets/images/fanbao/logo1.jpg"> -->
                <?php 
                $url = $art['more']['thumbnail']; 
                ?>
                 <img src=" <?php echo cmf_get_image_url($url); ?>"/>
                 <h2>
-                <?php echo $art['post_title'];                     $keywords = explode(',',$art['post_keywords']);
+                <!-- <?php echo $art['post_title']; ?> -->
+                试玩平台 <?php echo $key+1;                     $keywords = explode(',',$art['post_keywords']);
                 if(is_array($keywords) || $keywords instanceof \think\Collection || $keywords instanceof \think\Paginator): if( count($keywords)==0 ) : echo "" ;else: foreach($keywords as $key=>$keyword): if(!empty($keyword)): if($key == 0): ?>
                           <span><?php echo $keyword; ?></span>
                       <?php else: ?>
                           <span class="sp1"><?php echo $keyword; ?></span>
                       <?php endif; endif; endforeach; endif; else: echo "" ;endif; ?>
                 </h2>
-                <p>每单试玩奖励<?php echo $art['post_excerpt']; ?>元</p>
+                <p><?php echo $art['post_excerpt']; ?></p>
                 <button>去赚钱</button>
              </a></li>
              <?php endforeach; endif; else: echo "" ;endif; ?>
+              <li><a href="https://h5.youju.sohu.com/partner_invite?id=2197449">
+                <img src="/themes/fanbao/public/assets/images/fanbao/shafa.png">
+                <h2>
+                沙发视频<span>新手</span>
+                <p>每单试玩奖励3元</p>
+             </a></li>
           </ul>
           <h3>更多试玩平台正在准备中</h3>
        </div>
+           <!--  <div style="display:none;" id="rocket-to-top">
+              <div style="opacity:0;display:block;" class="level-2"></div>
+              <div class="level-3"></div>
+            </div> -->
+
+       <!-- rocket to top -->
+
        <!--主体部分结束-->
        <!--底部导航开始-->
        <nav>
@@ -110,6 +122,7 @@
     </div>
     <script src="/themes/fanbao/public/assets/js/jquery-1.10.2.min.js"></script>
     <script src="/themes/fanbao/public/assets/js/jquery.flexslider-min.js"></script>
+    <script src="/themes/fanbao/public/assets/js/script.js"></script>
     <script type="text/javascript">
     $(function () {
 $('#fan-home-slider').flexslider({
@@ -197,6 +210,11 @@ $(function() {
         })
     });
 });
+
+    $('#gonglue').on('click', function(event) {
+        event.preventDefault();
+        window.location.href = $(this).data('url');
+    });
     </script>
    </body>
 </html>
