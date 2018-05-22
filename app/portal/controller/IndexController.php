@@ -29,8 +29,10 @@ class IndexController extends HomeBaseController
         //$article = Db::name('portal_post')->where('id',1)->find();
         //$articles = Db::name('portal_post')->select();
         //print_r($banners);exit;
+        $people = rand(13100, 13999);
         $this->assign('articles',$articles);
         $this->assign('banners', $banners);
+        $this->assign('people', $people);
         //print_r($article);exit;
         return $this->fetch(':index');
     }
