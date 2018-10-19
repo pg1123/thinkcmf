@@ -20,7 +20,7 @@ class IndexController extends HomeBaseController
     public function index()
     {
         /*if (!$this->isMobile()){
-            echo '请用手机登录fanbazhuan.com，公众号:fanbaozhuan';
+            echo '请用手机访问: fanbazhuan.com';
             exit;
         }*/
         $articles =ApiService::articles(['category_ids'=>'1'])['articles'];
@@ -29,7 +29,7 @@ class IndexController extends HomeBaseController
         //$article = Db::name('portal_post')->where('id',1)->find();
         //$articles = Db::name('portal_post')->select();
         //print_r($banners);exit;
-        $people = rand(13100, 13999);
+        $people = rand(12106, 14999);
         $this->assign('articles',$articles);
         $this->assign('banners', $banners);
         $this->assign('people', $people);
@@ -40,6 +40,10 @@ class IndexController extends HomeBaseController
     // shi wan gong lue
     public function gonglue()
     {
+        if (!$this->isMobile()){
+            echo '请用手机访问: fanbazhuan.com';
+            exit;
+        }
         return $this->fetch(':gonglue');
     }
 }
