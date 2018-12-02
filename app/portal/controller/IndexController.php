@@ -46,4 +46,14 @@ class IndexController extends HomeBaseController
         }
         return $this->fetch(':gonglue');
     }
+
+    // zhi fu bao
+    public function zfb()
+    {
+        if (!$this->isMobile()){
+            echo '请用手机访问: fanbazhuan.com';
+            exit;
+        }
+        return $this->fetch(':zfb');
+    }
 }
