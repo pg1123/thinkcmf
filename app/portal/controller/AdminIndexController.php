@@ -20,7 +20,7 @@ use cmf\controller\AdminBaseController;
  *     'action' =>'default',
  *     'parent' =>'',
  *     'display'=> true,
- *     'order'  => 30,
+ *     'order'  => 50,
  *     'icon'   =>'th',
  *     'remark' =>'门户管理'
  * )

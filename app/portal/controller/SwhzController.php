@@ -23,6 +23,10 @@ class SwhzController extends HomeBaseController
 {
     public function index()
     {
+        if (!$this->isMobile()){
+            echo '请用手机访问: fanbazhuan.com';
+            exit;
+        }
         return $this->fetch(':swhz');
     }
 

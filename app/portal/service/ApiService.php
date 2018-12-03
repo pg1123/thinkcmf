@@ -63,7 +63,7 @@ class ApiService
         }
         $paramWhere = empty($param['where']) ? '' : $param['where'];
 
-        $limit       = empty($param['limit']) ? 30 : $param['limit'];
+        $limit       = empty($param['limit']) ? 100 : $param['limit'];
         $order       = empty($param['order']) ? '' : $param['order'];
         $page        = isset($param['page']) ? $param['page'] : false;
         $relation    = empty($param['relation']) ? '' : $param['relation'];
